@@ -1,7 +1,6 @@
 #include "DungeonMapWidget.h"
 
 #include "DungeonTypes.h"
-#include "Components/GridSlot.h"
 #include "Components/Image.h"
 
 void UDungeonMapWidget::NativeConstruct()
@@ -16,15 +15,15 @@ UImage* UDungeonMapWidget::GenerateImage()
 }
 
 
-void UDungeonMapWidget::UpdateMap(const TArray<TArray<E_RoomType>>& NewMap)
+void UDungeonMapWidget::UpdateMap(const TArray<TArray<E_RoomType>>& DungeonMap)
 {
 
-	for (int32 Row = 0; Row < NewMap.Num(); ++Row)
+	for (int32 Row = 0; Row < DungeonMap.Num(); ++Row)
 	{
-		for (int32 Col = 0; Col < NewMap[Row].Num(); ++Col)
+		for (int32 Col = 0; Col < DungeonMap[Row].Num(); ++Col)
 		{
 			FVector2D RoomPosition(Row,Col);
-			AddRoom(RoomPosition, NewMap[Row][Col]);
+			AddRoom(RoomPosition, DungeonMap[Row][Col]);
 			
 		}
 	}

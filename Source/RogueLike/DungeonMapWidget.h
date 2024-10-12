@@ -5,8 +5,6 @@
 #include "CoreMinimal.h"
 #include "DungeonTypes.h"
 #include "Blueprint/UserWidget.h"
-#include "Components/CanvasPanel.h"
-#include "Components/GridPanel.h"
 #include "Components/Image.h"
 #include "DungeonMapWidget.generated.h"
 
