@@ -25,6 +25,9 @@ protected:
 	void AddWidgetMap();
 	void SetEntrance();
 	void SetExit();
+	void DrawConnectionRooms();
+	bool IsLocationOccupied(const FVector2D& Location);
+	bool IsLocationInBounds(FVector2D Location);
 	static int32 GetManhattanDistance(const FVector2D& A, const FVector2D& B);
 
 	
@@ -33,6 +36,9 @@ protected:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int32 NumberOfColumns = 5;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	int32 NumberOfRoomsToExit = 5;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
 	TSubclassOf<UDungeonMapWidget> DungeonMapWidgetClass;

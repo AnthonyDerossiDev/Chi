@@ -11,12 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ff19a05-0108-4e85-822f-040f0cf23413" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Blueprints/Blueprint_CeilingLight.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Blueprints/Blueprint_CeilingLight.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/RoomsLogic/C+/WBP_DungeonMap.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/RoomsLogic/C+/WBP_DungeonMap.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/02_Levels/DungeonRooms/L_PersistentRooms.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/02_Levels/DungeonRooms/L_PersistentRooms.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RogueLike.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/RogueLike.uproject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RogueLike/DungeonMaker.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/DungeonMaker.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RogueLike/DungeonMaker.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/DungeonMaker.h" afterDir="false" />
@@ -28,6 +25,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Core/Tests/Containers/TestUtils.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -472,7 +472,7 @@
       <updated>1728774638059</updated>
       <workItem from="1728774640419" duration="3283000" />
       <workItem from="1728778306667" duration="686000" />
-      <workItem from="1728779243737" duration="2334000" />
+      <workItem from="1728779243737" duration="5009000" />
     </task>
     <servers />
   </component>
