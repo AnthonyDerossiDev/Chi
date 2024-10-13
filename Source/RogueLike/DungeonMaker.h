@@ -25,6 +25,8 @@ protected:
 	void AddWidgetMap();
 	void SetEntrance();
 	void SetExit();
+	static int32 GetManhattanDistance(const FVector2D& A, const FVector2D& B);
+
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int32 NumberOfRows = 5;
@@ -45,6 +47,12 @@ protected:
 
 private:
 	class UDungeonMapWidget* DungeonMapWidget;
+
+	// X = Row, Y = Column
+	FVector2D EntrancePosition;
+	// X = Row, Y = Column
+	FVector2D ExitPosition;
+	
 
 
 };
