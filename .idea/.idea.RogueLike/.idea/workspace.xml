@@ -12,46 +12,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ff19a05-0108-4e85-822f-040f0cf23413" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_CombatRoom_Var01_01.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_CombatRoom_Var02_02.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_CombatRoom_Var02_03.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_CombatRoom_Var02_04.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_EntryRoom_Down.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_EntryRoom_Left.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_EntryRoom_Right.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_EntryRoom_Top.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatRoom_Var01-01.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatRoom_Var02_02.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatRoom_Var02_03.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatVar01/CombatRoom_Var01-01.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatVar01/CombatRoom_Var01.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatVar02/CombatRoom_Var02.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatVar02/CombatRoom_Var02_01.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatVar02/CombatRoom_Var02_02.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatVar02/CombatRoom_Var02_03.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatVar02/CombatRoom_Var02_04.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Entrance/EntryRoom_Down.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Entrance/EntryRoom_Left.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Entrance/EntryRoom_Right.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Entrance/EntryRoom_Top.umap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/SM_SM_DoorConnection.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RD_RewardRoom01.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RD_RewardRoom02.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RD_RewardRoom03.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Plugins/LevelPrototyping/Materials/MI_PrototypeGrid_Yellow.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/BP_DungeonGenerator.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/BP_DungeonGenerator.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/BP_NormalDoor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/BP_NormalDoor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_CombatRoom.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_CombatRoom_Var01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_CombatRoom_Var01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_CombatRoom_Var02.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_CombatRoom_Var02.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_CombatRoom_Var03.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_EntryRoom.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_EntryRoom.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatRoom_Var01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatRoom_Var01.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatRoom_Var02.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatRoom_Var02.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Combat/CombatRoom_Var03.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Entrance/EntryRoom_Var01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Entrance/EntryRoom_Var01.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Entrance/EntryRoom_Var02.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Entrance/EntryRoom_Var02.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Entrance/EntryRoom_Var03.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Entrance/EntryRoom_Var03.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/MainDungeon.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/MainDungeon.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RewardRoom_Var01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RewardRoom_Var01.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RewardRoom_Var02.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RewardRoom_Var02.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RewardRoom_Var03.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RewardRoom_Var03.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Shop/ShopRoom_Var01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Shop/ShopRoom_Var01.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Shop/ShopRoom_Var02.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Shop/ShopRoom_Var02.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Shop/ShopRoom_Var03.umap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/SM_SM_DoorConnection.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/SM_SM_DoorConnection.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -534,7 +508,7 @@
       <workItem from="1728774640419" duration="3283000" />
       <workItem from="1728778306667" duration="686000" />
       <workItem from="1728779243737" duration="5009000" />
-      <workItem from="1728834739259" duration="851000" />
+      <workItem from="1728834739259" duration="2332000" />
     </task>
     <servers />
   </component>
