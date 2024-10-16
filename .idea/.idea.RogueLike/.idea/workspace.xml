@@ -12,20 +12,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ff19a05-0108-4e85-822f-040f0cf23413" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RD_RewardRoom01.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RD_RewardRoom02.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RD_RewardRoom03.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Plugins/LevelPrototyping/Materials/MI_PrototypeGrid_Yellow.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/BP_DungeonGenerator.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/BP_DungeonGenerator.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/BP_NormalDoor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/BP_NormalDoor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_CombatRoom_Var01.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/0_RoomData/RD_CombatRoom_Var01.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RewardRoom_Var01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RewardRoom_Var01.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RewardRoom_Var02.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RewardRoom_Var02.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RewardRoom_Var03.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Reward/RewardRoom_Var03.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Shop/ShopRoom_Var01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Shop/ShopRoom_Var01.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Shop/ShopRoom_Var02.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Shop/ShopRoom_Var02.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/Rooms/Shop/ShopRoom_Var03.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DungeonStuff/SM_SM_DoorConnection.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DungeonStuff/SM_SM_DoorConnection.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/DungeonStuff/Chest/BP_LootObject.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/DungeonStuff/Chest/BP_LootObject_Common.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/DungeonStuff/Chest/BP_LootObject_Uncommon.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/DungeonStuff/Chest/BP_RoomChest.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/DungeonStuff/Chest/DT_RandomLoot.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/DungeonStuff/Chest/S_RandomLoot.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/0_PROVISIONAL/ABP_Chest.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/0_PROVISIONAL/AM_ChestOpen.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/0_PROVISIONAL/Chest.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/0_PROVISIONAL/Chest_Anim.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/0_PROVISIONAL/Chest_Skeleton.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/DungeonStuff/BP_DungeonGenerator.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/DungeonStuff/BP_DungeonGenerator.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/DungeonStuff/BP_NormalDoor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/DungeonStuff/BP_NormalDoor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Enemies/BP_RoomEnemiesController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Enemies/BP_RoomEnemiesController.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Combat/CombatVar01/CombatRoom_Var01-01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Combat/CombatVar01/CombatRoom_Var01-01.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Combat/CombatVar01/CombatRoom_Var01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Combat/CombatVar01/CombatRoom_Var01.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Combat/CombatVar02/CombatRoom_Var02_01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Combat/CombatVar02/CombatRoom_Var02_01.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Combat/CombatVar02/CombatRoom_Var02_02.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Combat/CombatVar02/CombatRoom_Var02_02.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Combat/CombatVar02/CombatRoom_Var02_03.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Combat/CombatVar02/CombatRoom_Var02_03.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Combat/CombatVar02/CombatRoom_Var02_04.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Combat/CombatVar02/CombatRoom_Var02_04.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Entrance/EntryRoom_Down.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/02_Levels/Dungeon/Entrance/EntryRoom_Down.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/0_PROVISIONAL/SKM_ChiProvisional_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/0_PROVISIONAL/SKM_ChiProvisional_Skeleton.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,27 +59,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Anthony\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Anthony\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Anthony\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Anthony\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Anthony\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Anthony\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C++ Project.RogueLike">
     <configuration name="RogueLike" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -509,6 +519,7 @@
       <workItem from="1728778306667" duration="686000" />
       <workItem from="1728779243737" duration="5009000" />
       <workItem from="1728834739259" duration="2332000" />
+      <workItem from="1729013071019" duration="604000" />
     </task>
     <servers />
   </component>
