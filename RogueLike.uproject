@@ -31,6 +31,10 @@
 		{
 			"Name": "ProceduralDungeon",
 			"Enabled": true
+		},
+		{
+			"Name": "MovieRenderPipeline",
+			"Enabled": true
 		}
 	]
 }
