@@ -28,7 +28,7 @@ void UStatsManager::UpdateStatValue(EPlayerStatType StatType, float Delta)
 {
 	if (StatsMap.Contains(StatType))
 	{
-		StatsMap[StatType].Value = Delta;
+		StatsMap[StatType].Value += Delta;
 	}
 }
 
