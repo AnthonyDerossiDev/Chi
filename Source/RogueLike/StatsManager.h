@@ -84,11 +84,16 @@ struct FPlayerStatStruct
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
 	float Value;
 
+	// Valor que se suma a la estadística por cada stack.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
+	float StackValue;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
 	float BaseValue;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
 	float IncreaseMultiplier;
+
 };
 
 // Clase que gestiona las estadísticas del jugador
