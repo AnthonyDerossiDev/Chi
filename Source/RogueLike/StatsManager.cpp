@@ -15,7 +15,7 @@ UStatsManager::UStatsManager()
         
 		FPlayerStatStruct StatStruct;
 		StatStruct.Value = 0.0f; // Valor inicial, puedes personalizarlo según lo necesites
-		StatStruct.BaseValue = 1.0f; // Puedes cambiar este valor si lo deseas
+		StatStruct.BaseValue = 0.0f; // Puedes cambiar este valor si lo deseas
 		StatStruct.LevelIncreaseMultiplier = 0.1f; // Ajusta este valor también si lo deseas
 		StatStruct.AdditiveValues = 0.0f; // Ajusta este valor también si lo deseas
 		StatStruct.MultiplicativeValues = 1.0f; // Ajusta este valor también si lo deseas
@@ -60,8 +60,14 @@ float UStatsManager::GetStatValueByFormula(EPlayerStatType StatType) const
 
 void UStatsManager::SetInitialValues()
 {
-	for (TPair<EPlayerStatType, FPlayerStatStruct>& Pair : StatsMap)
+	for (int32 StatIndex = 0; StatIndex < static_cast<int32>(EPlayerStatType::KnockBackDistance) + 1; ++StatIndex)
 	{
-		Pair.Value.Value = Pair.Value.BaseValue;
+		EPlayerStatType StatType = static_cast<EPlayerStatType>(StatIndex);
+		StatsMap[StatType].Value =StatsMap[StatType].BaseValue;
 	}
+	StatsMap[EPlayerStatType::CurrentHealth].Value = StatsMap[EPlayerStatType::MaxHealth].Value;
+	StatsMap[EPlayerStatType::CurrentHealth].BaseValue = StatsMap[EPlayerStatType::MaxHealth].Value;
+	
 }
+
+
