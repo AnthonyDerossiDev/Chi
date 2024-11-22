@@ -24,14 +24,27 @@ UStatsManager::UStatsManager()
 		// Insertar el nuevo stat en el mapa
 		StatsMap.Add(StatType, StatStruct);
 	}
+	SetDefaultValues();
 }
 
 // Actualiza el valor de una estadística específica
-void UStatsManager::UpdateStatValue(EPlayerStatType StatType, float Delta)
+void UStatsManager::UpdateStatValue(EPlayerStatType StatType, EStatModifierType StatModifier,float Delta)
 {
 	if (StatsMap.Contains(StatType))
 	{
 		StatsMap[StatType].Value += Delta;
+		switch (StatModifier)
+		{
+			case EStatModifierType::Addition:
+				StatsMap[StatType].AdditiveValues += Delta;
+				break;
+			case EStatModifierType::Multiplication:
+				StatsMap[StatType].MultiplicativeValues += Delta;
+				break;
+			case EStatModifierType::Division:
+				StatsMap[StatType].DivisorValues += Delta;
+				break;
+		}
 	}
 }
 
@@ -58,16 +71,24 @@ float UStatsManager::GetStatValueByFormula(EPlayerStatType StatType) const
 	return StatValue;
 }
 
-void UStatsManager::SetInitialValues()
+void UStatsManager::SetValuesOnBegin()
 {
+	SetDefaultValues();
 	for (int32 StatIndex = 0; StatIndex < static_cast<int32>(EPlayerStatType::KnockBackDistance) + 1; ++StatIndex)
 	{
 		EPlayerStatType StatType = static_cast<EPlayerStatType>(StatIndex);
 		StatsMap[StatType].Value =StatsMap[StatType].BaseValue;
 	}
+
 	StatsMap[EPlayerStatType::CurrentHealth].Value = StatsMap[EPlayerStatType::MaxHealth].Value;
 	StatsMap[EPlayerStatType::CurrentHealth].BaseValue = StatsMap[EPlayerStatType::MaxHealth].Value;
 	
+}
+
+void UStatsManager::SetDefaultValues()
+{
+	// Asignaciónn de aquellos valores que SÍ O SÍ han de estar a un mínimo, de lo contrario el resultado será 0
+	StatsMap[EPlayerStatType::CriticalDamage].BaseValue = 2.0f;
 }
 
 

@@ -6,6 +6,13 @@
 #include "UObject/NoExportTypes.h"
 #include "StatsManager.generated.h"
 
+UENUM(BlueprintType)
+enum class EStatModifierType : uint8
+{
+	Addition,
+	Multiplication,
+	Division
+};
 // Declaración del enum class para los tipos de estadísticas
 UENUM(BlueprintType)
 enum class EPlayerStatType : uint8
@@ -130,7 +137,7 @@ public:
 
 	// Función para actualizar el valor de una estadística
 	UFUNCTION(BlueprintCallable, Category = "Stats")
-	void UpdateStatValue(EPlayerStatType StatType, float Delta);
+	void UpdateStatValue(EPlayerStatType StatType,EStatModifierType StatModifier, float Delta);
 
 	// Función para obtener la estructura de una estadística específica
 	UFUNCTION(BlueprintCallable, Category = "Stats")
@@ -140,5 +147,7 @@ public:
 	float GetStatValueByFormula(EPlayerStatType StatType) const;
 
 	UFUNCTION(BlueprintCallable, Category = "Stats")
-	void SetInitialValues();
+	void SetValuesOnBegin();
+
+	void SetDefaultValues();
 };
