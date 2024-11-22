@@ -89,6 +89,7 @@ void UStatsManager::SetDefaultValues()
 {
 	// Asignaciónn de aquellos valores que SÍ O SÍ han de estar a un mínimo, de lo contrario el resultado será 0
 	StatsMap[EPlayerStatType::CriticalDamage].BaseValue = 2.0f;
+	StatsMap[EPlayerStatType::ProjectileSpeed].BaseValue = 1.0f;
 }
 
 
