@@ -71,7 +71,11 @@ enum class EPlayerStatType : uint8
     StunChance,            // Probability of stunning an enemy on hit.
     StunDuration,          // Duration of enemy stun.
     KnockBackChance,       // Probability of pushing an enemy back on hit.
-    KnockBackDistance      // Distance the enemy is pushed back when knocked back.
+    KnockBackDistance,      // Distance the enemy is pushed back when knocked back.
+	
+	// Misc
+	ExtraBossDamage,
+	AvoidAttacksProbability
 
 };
 
