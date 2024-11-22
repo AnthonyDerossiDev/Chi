@@ -16,7 +16,10 @@ UStatsManager::UStatsManager()
 		FPlayerStatStruct StatStruct;
 		StatStruct.Value = 0.0f; // Valor inicial, puedes personalizarlo según lo necesites
 		StatStruct.BaseValue = 1.0f; // Puedes cambiar este valor si lo deseas
-		StatStruct.IncreaseMultiplier = 0.1f; // Ajusta este valor también si lo deseas
+		StatStruct.LevelIncreaseMultiplier = 0.1f; // Ajusta este valor también si lo deseas
+		StatStruct.AdditiveValues = 0.0f; // Ajusta este valor también si lo deseas
+		StatStruct.MultiplicativeValues = 1.0f; // Ajusta este valor también si lo deseas
+		StatStruct.DivisorValues = 1.0f; // Ajusta este valor también si lo deseas
 
 		// Insertar el nuevo stat en el mapa
 		StatsMap.Add(StatType, StatStruct);
@@ -42,4 +45,23 @@ FPlayerStatStruct UStatsManager::GetStat(EPlayerStatType StatType) const
 
 	// Devuelve un valor por defecto si la estadística no existe
 	return FPlayerStatStruct();
+}
+
+float UStatsManager::GetStatValueByFormula(EPlayerStatType StatType) const
+{
+	// EstadísticaBase * Σ ValoresMultiplicativos / Σ Valores divisores + Σ Valores aditivos
+	float StatValue = 0.0f;
+	if (const FPlayerStatStruct* Stat = StatsMap.Find(StatType))
+	{
+		 StatValue = Stat->BaseValue * Stat->MultiplicativeValues / Stat->DivisorValues + Stat->AdditiveValues;
+	}
+	return StatValue;
+}
+
+void UStatsManager::SetInitialValues()
+{
+	for (TPair<EPlayerStatType, FPlayerStatStruct>& Pair : StatsMap)
+	{
+		Pair.Value.Value = Pair.Value.BaseValue;
+	}
 }
