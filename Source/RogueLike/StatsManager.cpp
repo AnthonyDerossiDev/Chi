@@ -18,6 +18,7 @@ UStatsManager::UStatsManager()
 		StatStruct.AdditiveValues = 0.0f; // Ajusta este valor también si lo deseas
 		StatStruct.MultiplicativeValues = 1.0f; // Ajusta este valor también si lo deseas
 		StatStruct.DivisorValues = 1.0f; // Ajusta este valor también si lo deseas
+		StatStruct.MaxValue = 100.0f;
 
 		// Insertar el nuevo stat en el mapa
 		StatsMap.Add(StatType, StatStruct);
@@ -64,7 +65,8 @@ float UStatsManager::GetStatValueByFormula(EPlayerStatType StatType) const
 	float StatValue = 0.0f;
 	if (const FPlayerStatStruct* Stat = StatsMap.Find(StatType))
 	{
-		 StatValue = Stat->BaseValue * Stat->MultiplicativeValues / Stat->DivisorValues + Stat->AdditiveValues;
+		StatValue = Stat->BaseValue * Stat->MultiplicativeValues / Stat->DivisorValues + Stat->AdditiveValues;
+		if(StatValue >= Stat->MaxValue) StatValue = Stat->MaxValue;
 	}
 	return StatValue;
 }

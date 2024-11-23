@@ -104,6 +104,10 @@ struct FPlayerStatStruct
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
 	float BaseValue;
 
+	// Valor máximo para el stat
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
+	float MaxValue;
+
 	// Valor por el cual se multiplica la estadística al subir de nivel
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
 	float LevelIncreaseMultiplier;
