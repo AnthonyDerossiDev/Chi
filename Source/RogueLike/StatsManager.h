@@ -6,6 +6,13 @@
 #include "UObject/NoExportTypes.h"
 #include "StatsManager.generated.h"
 
+UENUM(BlueprintType)
+enum class EStatModifierType : uint8
+{
+	Addition,
+	Multiplication,
+	Division
+};
 // Declaración del enum class para los tipos de estadísticas
 UENUM(BlueprintType)
 enum class EPlayerStatType : uint8
@@ -85,18 +92,33 @@ struct FPlayerStatStruct
 {
 	GENERATED_BODY()
 
+	// Valor actual de la estadística
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
 	float Value;
 
 	// Valor que se suma a la estadística por cada stack.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
 	float StackValue;
-	
+
+	// Valor que tiene la estadística de forma predeterminada
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
 	float BaseValue;
 
+	// Valor por el cual se multiplica la estadística al subir de nivel
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
-	float IncreaseMultiplier;
+	float LevelIncreaseMultiplier;
+
+	// Valores aditivos actuales
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
+	float AdditiveValues;
+
+	// Valores multiplicativos actuales
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
+	float MultiplicativeValues;
+
+	// Valores divisores actuales
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stat")
+	float DivisorValues;
 
 };
 
@@ -115,9 +137,17 @@ public:
 
 	// Función para actualizar el valor de una estadística
 	UFUNCTION(BlueprintCallable, Category = "Stats")
-	void UpdateStatValue(EPlayerStatType StatType, float Delta);
+	void UpdateStatValue(EPlayerStatType StatType,EStatModifierType StatModifier, float Delta);
 
 	// Función para obtener la estructura de una estadística específica
 	UFUNCTION(BlueprintCallable, Category = "Stats")
 	FPlayerStatStruct GetStat(EPlayerStatType StatType) const;
+
+	UFUNCTION(BlueprintCallable, Category = "Stats")
+	float GetStatValueByFormula(EPlayerStatType StatType) const;
+
+	UFUNCTION(BlueprintCallable, Category = "Stats")
+	void SetValuesOnBegin();
+
+	void SetDefaultValues();
 };
