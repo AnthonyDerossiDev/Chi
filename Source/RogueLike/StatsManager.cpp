@@ -7,7 +7,7 @@
 UStatsManager::UStatsManager()
 {
 	// Llenar el mapa con todos los EPlayerStatType
-	for (int32 StatIndex = 0; StatIndex < static_cast<int32>(EPlayerStatType::KnockBackDistance) + 1; ++StatIndex)
+	for (int32 StatIndex = 0; StatIndex < static_cast<int32>(EPlayerStatType::AvoidAttacksProbability) + 1; ++StatIndex)
 	{
 		EPlayerStatType StatType = static_cast<EPlayerStatType>(StatIndex);
         
