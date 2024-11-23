@@ -89,6 +89,7 @@ void UStatsManager::SetDefaultValues()
 	if(StatsMap[EPlayerStatType::CriticalDamage].BaseValue == 0) StatsMap[EPlayerStatType::CriticalDamage].BaseValue = 2.0f;
 	if(StatsMap[EPlayerStatType::ProjectileSpeed].BaseValue == 0) StatsMap[EPlayerStatType::ProjectileSpeed].BaseValue = 1.0f;
 	if(StatsMap[EPlayerStatType::StunDuration].BaseValue == 0) StatsMap[EPlayerStatType::StunDuration].BaseValue = 1.0f;
+	if(StatsMap[EPlayerStatType::HealingTick].BaseValue == 0) StatsMap[EPlayerStatType::HealingTick].BaseValue = 1.0f;
 }
 
 

@@ -67,8 +67,8 @@ enum class EPlayerStatType : uint8
     CoolDown,              // Time required for a skill or action to be used again.
 
     // Healing-related stats
-    HealingAmount,         // Amount of health restored.
-    HealingDuration,       // Duration over which health is restored.
+    HealingAmount,			// Amount of health restored.
+    HealingTick,			// The interval in seconds at which health is restored over time.// The interval in seconds at which health is restored over time.
 
     // Damage and resistance types
     DamageType,            // Type of damage dealt (blunt, piercing, fire, etc.).
