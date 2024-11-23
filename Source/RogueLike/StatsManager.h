@@ -131,6 +131,7 @@ class ROGUELIKE_API UStatsManager : public UObject
 	UStatsManager();
 
 public:
+	
 	// Mapa para almacenar las estadísticas, utilizando el enum class como clave
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
 	TMap<EPlayerStatType, FPlayerStatStruct> StatsMap;

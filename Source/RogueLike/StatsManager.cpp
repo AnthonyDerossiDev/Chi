@@ -3,8 +3,6 @@
 
 #include "StatsManager.h"
 
-#include "StatsManager.h"
-
 // Constructor
 UStatsManager::UStatsManager()
 {
