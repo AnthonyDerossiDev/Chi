@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "PickUpParentMesh.h"
 #include "UObject/NoExportTypes.h"
 #include "StatsManager.generated.h"
 
@@ -141,6 +142,10 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Events")
 	FOnStatModified OnStatModified;
 	
+	// Mapa para almacenar los valores que se van generando de los objetos recogidos
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
+	TMap<TSubclassOf<APickUpParentMesh>, float> PickedUpObjectsData;
+
 	// Mapa para almacenar las estadísticas, utilizando el enum class como clave
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
 	TMap<EPlayerStatType, FPlayerStatStruct> StatsMap;
