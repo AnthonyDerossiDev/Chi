@@ -36,6 +36,8 @@ void UStatsManager::UpdateStatValue(EPlayerStatType StatType, EStatModifierType 
 		{
 			case EStatModifierType::Addition:
 				StatsMap[StatType].AdditiveValues += Delta;
+				GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, FString::Printf(TEXT("%f"), StatsMap[StatType].AdditiveValues));
+				GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, FString::Printf(TEXT("%f"), Delta));
 				break;
 			case EStatModifierType::Multiplication:
 				StatsMap[StatType].MultiplicativeValues += Delta;
@@ -73,22 +75,23 @@ float UStatsManager::GetStatValueByFormula(EPlayerStatType StatType) const
 
 void UStatsManager::SetValuesOnBegin()
 {
-	SetDefaultValues();
-	for (int32 StatIndex = 0; StatIndex < static_cast<int32>(EPlayerStatType::KnockBackDistance) + 1; ++StatIndex)
-	{
-		EPlayerStatType StatType = static_cast<EPlayerStatType>(StatIndex);
-		StatsMap[StatType].Value =StatsMap[StatType].BaseValue;
-	}
-
-	StatsMap[EPlayerStatType::CurrentHealth].Value = StatsMap[EPlayerStatType::MaxHealth].Value;
-	StatsMap[EPlayerStatType::CurrentHealth].BaseValue = StatsMap[EPlayerStatType::MaxHealth].Value;
-	
+	// for (int32 StatIndex = 0; StatIndex < static_cast<int32>(EPlayerStatType::AvoidAttacksProbability) + 1; ++StatIndex)
+	// {
+	// 	EPlayerStatType StatType = static_cast<EPlayerStatType>(StatIndex);
+	// 	StatsMap[StatType].Value =StatsMap[StatType].BaseValue;
+	// }
 }
 
 void UStatsManager::SetDefaultValues()
 {
-	// Asignaciónn de aquellos valores que SÍ O SÍ han de estar a un mínimo, de lo contrario el resultado será 0
-	if(StatsMap[EPlayerStatType::MaxHealth].BaseValue == 0) StatsMap[EPlayerStatType::MaxHealth].BaseValue = 250.0f;
+	// Salud
+	float InitialHP = 250;
+	StatsMap[EPlayerStatType::MaxHealth].BaseValue = InitialHP;
+	StatsMap[EPlayerStatType::MaxHealth].MaxValue = InitialHP;
+	StatsMap[EPlayerStatType::CurrentHealth].BaseValue = InitialHP;
+	StatsMap[EPlayerStatType::CurrentHealth].MaxValue = InitialHP;
+	
+	
 	if(StatsMap[EPlayerStatType::CriticalDamage].BaseValue == 0) StatsMap[EPlayerStatType::CriticalDamage].BaseValue = 2.0f;
 	if(StatsMap[EPlayerStatType::ProjectileSpeed].BaseValue == 0) StatsMap[EPlayerStatType::ProjectileSpeed].BaseValue = 1.0f;
 	if(StatsMap[EPlayerStatType::StunDuration].BaseValue == 0) StatsMap[EPlayerStatType::StunDuration].BaseValue = 1.0f;
