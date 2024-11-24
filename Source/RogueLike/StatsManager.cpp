@@ -77,11 +77,7 @@ float UStatsManager::GetStatValueByFormula(EPlayerStatType StatType) const
 
 void UStatsManager::SetValuesOnBegin()
 {
-	// for (int32 StatIndex = 0; StatIndex < static_cast<int32>(EPlayerStatType::AvoidAttacksProbability) + 1; ++StatIndex)
-	// {
-	// 	EPlayerStatType StatType = static_cast<EPlayerStatType>(StatIndex);
-	// 	StatsMap[StatType].Value =StatsMap[StatType].BaseValue;
-	// }
+	SetDefaultValues();
 }
 
 void UStatsManager::AddExperience(float Delta)
@@ -120,6 +116,14 @@ void UStatsManager::SetDefaultValues()
 	// if(StatsMap[EPlayerStatType::ProjectileSpeed].BaseValue == 0) StatsMap[EPlayerStatType::ProjectileSpeed].BaseValue = 1.0f;
 	// if(StatsMap[EPlayerStatType::StunDuration].BaseValue == 0) StatsMap[EPlayerStatType::StunDuration].BaseValue = 1.0f;
 	// if(StatsMap[EPlayerStatType::HealingTick].BaseValue == 0) StatsMap[EPlayerStatType::HealingTick].BaseValue = 1.0f;
+}
+
+void UStatsManager::RecoverChiiHPInstant(float MaxHPPercentage)
+{
+	float MaxHealth = StatsMap[EPlayerStatType::MaxHealth].BaseValue;
+	float TargetHealth = MaxHPPercentage*MaxHealth/100;
+	
+	StatsMap[EPlayerStatType::CurrentHealth].AdditiveValues = TargetHealth - StatsMap[EPlayerStatType::CurrentHealth].BaseValue;
 }
 
 

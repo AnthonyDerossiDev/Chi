@@ -181,4 +181,7 @@ public:
 	void AddBalance(float Delta);
 
 	void SetDefaultValues();
+
+	UFUNCTION(BlueprintCallable, Category = "Stats")
+	void RecoverChiiHPInstant(float MaxHPPercentage);
 };
