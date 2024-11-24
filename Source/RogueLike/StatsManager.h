@@ -152,6 +152,14 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
 	int CoinsBalance = 0;
 
+	// Valores iniciales
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats|Initial values override")
+	int InitialHP = 250;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats|Initial values override")
+	int InitialProjectileSpeed = 1;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats|Initial values override")
+	int InitialHPRegeneration = 1;
+
 	// Función para actualizar el valor de una estadística
 	UFUNCTION(BlueprintCallable, Category = "Stats")
 	void UpdateStatValue(EPlayerStatType StatType,EStatModifierType StatModifier, float Delta);

@@ -14,7 +14,7 @@ UStatsManager::UStatsManager()
 		FPlayerStatStruct StatStruct;
 		StatStruct.Value = 0.0f; // Valor inicial, puedes personalizarlo según lo necesites
 		StatStruct.BaseValue = 0.0f; // Puedes cambiar este valor si lo deseas
-		StatStruct.LevelIncreaseMultiplier = 1.0f; // Ajusta este valor también si lo deseas
+		StatStruct.LevelIncreaseMultiplier = 0.0f; // Ajusta este valor también si lo deseas
 		StatStruct.AdditiveValues = 0.0f; // Ajusta este valor también si lo deseas
 		StatStruct.MultiplicativeValues = 1.0f; // Ajusta este valor también si lo deseas
 		StatStruct.DivisorValues = 1.0f; // Ajusta este valor también si lo deseas
@@ -36,8 +36,8 @@ void UStatsManager::UpdateStatValue(EPlayerStatType StatType, EStatModifierType 
 		{
 			case EStatModifierType::Addition:
 				StatsMap[StatType].AdditiveValues += Delta;
-				GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, FString::Printf(TEXT("%f"), StatsMap[StatType].AdditiveValues));
-				GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, FString::Printf(TEXT("%f"), Delta));
+				//GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, FString::Printf(TEXT("%f"), StatsMap[StatType].AdditiveValues));
+				//GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, FString::Printf(TEXT("%f"), Delta));
 				break;
 			case EStatModifierType::Multiplication:
 				StatsMap[StatType].MultiplicativeValues += Delta;
@@ -69,7 +69,8 @@ float UStatsManager::GetStatValueByFormula(EPlayerStatType StatType) const
 	{
 		//StatValue = Stat->BaseValue * Stat->MultiplicativeValues / Stat->DivisorValues + Stat->AdditiveValues;
 		StatValue = (Stat->BaseValue + (Stat->LevelIncreaseMultiplier * Level)) * Stat->MultiplicativeValues / Stat->DivisorValues + Stat->AdditiveValues;
-		if(StatValue >= Stat->MaxValue) StatValue = Stat->MaxValue;
+
+		if(Stat->MaxValue != -1 && StatValue >= Stat->MaxValue) StatValue = Stat->MaxValue;
 	}
 	return StatValue;
 }
@@ -103,17 +104,22 @@ void UStatsManager::AddBalance(float Delta)
 void UStatsManager::SetDefaultValues()
 {
 	// Salud
-	float InitialHP = 250;
 	StatsMap[EPlayerStatType::MaxHealth].BaseValue = InitialHP;
-	StatsMap[EPlayerStatType::MaxHealth].MaxValue = InitialHP;
+	StatsMap[EPlayerStatType::MaxHealth].MaxValue = -1;
 	StatsMap[EPlayerStatType::CurrentHealth].BaseValue = InitialHP;
-	StatsMap[EPlayerStatType::CurrentHealth].MaxValue = InitialHP;
+	StatsMap[EPlayerStatType::CurrentHealth].MaxValue = -1;
+
+	// Regeneración de salud
+	StatsMap[EPlayerStatType::HealingAmount].BaseValue = InitialHPRegeneration;
+
+	// Velocidad de ataque
+	StatsMap[EPlayerStatType::ProjectileSpeed].BaseValue = InitialProjectileSpeed;
 	
-	
-	if(StatsMap[EPlayerStatType::CriticalDamage].BaseValue == 0) StatsMap[EPlayerStatType::CriticalDamage].BaseValue = 2.0f;
-	if(StatsMap[EPlayerStatType::ProjectileSpeed].BaseValue == 0) StatsMap[EPlayerStatType::ProjectileSpeed].BaseValue = 1.0f;
-	if(StatsMap[EPlayerStatType::StunDuration].BaseValue == 0) StatsMap[EPlayerStatType::StunDuration].BaseValue = 1.0f;
-	if(StatsMap[EPlayerStatType::HealingTick].BaseValue == 0) StatsMap[EPlayerStatType::HealingTick].BaseValue = 1.0f;
+	//
+	// if(StatsMap[EPlayerStatType::CriticalDamage].BaseValue == 0) StatsMap[EPlayerStatType::CriticalDamage].BaseValue = 2.0f;
+	// if(StatsMap[EPlayerStatType::ProjectileSpeed].BaseValue == 0) StatsMap[EPlayerStatType::ProjectileSpeed].BaseValue = 1.0f;
+	// if(StatsMap[EPlayerStatType::StunDuration].BaseValue == 0) StatsMap[EPlayerStatType::StunDuration].BaseValue = 1.0f;
+	// if(StatsMap[EPlayerStatType::HealingTick].BaseValue == 0) StatsMap[EPlayerStatType::HealingTick].BaseValue = 1.0f;
 }
 
 
