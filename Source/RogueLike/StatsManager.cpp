@@ -14,7 +14,7 @@ UStatsManager::UStatsManager()
 		FPlayerStatStruct StatStruct;
 		StatStruct.Value = 0.0f; // Valor inicial, puedes personalizarlo según lo necesites
 		StatStruct.BaseValue = 0.0f; // Puedes cambiar este valor si lo deseas
-		StatStruct.LevelIncreaseMultiplier = 0.1f; // Ajusta este valor también si lo deseas
+		StatStruct.LevelIncreaseMultiplier = 1.0f; // Ajusta este valor también si lo deseas
 		StatStruct.AdditiveValues = 0.0f; // Ajusta este valor también si lo deseas
 		StatStruct.MultiplicativeValues = 1.0f; // Ajusta este valor también si lo deseas
 		StatStruct.DivisorValues = 1.0f; // Ajusta este valor también si lo deseas
@@ -67,7 +67,8 @@ float UStatsManager::GetStatValueByFormula(EPlayerStatType StatType) const
 	float StatValue = 0.0f;
 	if (const FPlayerStatStruct* Stat = StatsMap.Find(StatType))
 	{
-		StatValue = Stat->BaseValue * Stat->MultiplicativeValues / Stat->DivisorValues + Stat->AdditiveValues;
+		//StatValue = Stat->BaseValue * Stat->MultiplicativeValues / Stat->DivisorValues + Stat->AdditiveValues;
+		StatValue = (Stat->BaseValue + (Stat->LevelIncreaseMultiplier * Level)) * Stat->MultiplicativeValues / Stat->DivisorValues + Stat->AdditiveValues;
 		if(StatValue >= Stat->MaxValue) StatValue = Stat->MaxValue;
 	}
 	return StatValue;
@@ -80,6 +81,18 @@ void UStatsManager::SetValuesOnBegin()
 	// 	EPlayerStatType StatType = static_cast<EPlayerStatType>(StatIndex);
 	// 	StatsMap[StatType].Value =StatsMap[StatType].BaseValue;
 	// }
+}
+
+void UStatsManager::AddExperience(float Delta)
+{
+	float DeltaDifference = Delta;
+	if(CurrentLevelExperience + Delta >= 100)
+	{
+		Level++;
+		DeltaDifference = CurrentLevelExperience + Delta - 100;
+		CurrentLevelExperience = 0;
+	}
+	CurrentLevelExperience += DeltaDifference;
 }
 
 void UStatsManager::SetDefaultValues()

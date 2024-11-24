@@ -140,6 +140,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
 	TMap<EPlayerStatType, FPlayerStatStruct> StatsMap;
 
+	// Nivel actual del jugador
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
+	int Level = 1;
+	// Experiencia actual del jugador, cada vez que llega a 100, se sube un nivel y esta variable vuelve a 0
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
+	int CurrentLevelExperience = 0;
+
 	// Función para actualizar el valor de una estadística
 	UFUNCTION(BlueprintCallable, Category = "Stats")
 	void UpdateStatValue(EPlayerStatType StatType,EStatModifierType StatModifier, float Delta);
@@ -153,6 +160,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Stats")
 	void SetValuesOnBegin();
+
+	UFUNCTION(BlueprintCallable, Category = "Stats")
+	void AddExperience(float Delta);
 
 	void SetDefaultValues();
 };
