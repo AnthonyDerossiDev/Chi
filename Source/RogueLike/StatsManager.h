@@ -6,6 +6,7 @@
 #include "UObject/NoExportTypes.h"
 #include "StatsManager.generated.h"
 
+
 UENUM(BlueprintType)
 enum class EStatModifierType : uint8
 {
@@ -86,6 +87,8 @@ enum class EPlayerStatType : uint8
 
 };
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStatModified, EPlayerStatType, Value);
+
 // Declaración de la estructura de estadísticas del jugador
 USTRUCT(BlueprintType)
 struct FPlayerStatStruct
@@ -135,6 +138,8 @@ class ROGUELIKE_API UStatsManager : public UObject
 	UStatsManager();
 
 public:
+	UPROPERTY(BlueprintAssignable, Category = "Events")
+	FOnStatModified OnStatModified;
 	
 	// Mapa para almacenar las estadísticas, utilizando el enum class como clave
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")

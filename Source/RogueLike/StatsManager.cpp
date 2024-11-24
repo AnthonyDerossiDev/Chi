@@ -46,6 +46,7 @@ void UStatsManager::UpdateStatValue(EPlayerStatType StatType, EStatModifierType 
 				StatsMap[StatType].DivisorValues += Delta;
 				break;
 		}
+		OnStatModified.Broadcast(StatType);
 	}
 }
 
