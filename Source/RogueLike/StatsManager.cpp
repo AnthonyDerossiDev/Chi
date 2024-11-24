@@ -95,6 +95,11 @@ void UStatsManager::AddExperience(float Delta)
 	CurrentLevelExperience += DeltaDifference;
 }
 
+void UStatsManager::AddBalance(float Delta)
+{
+	CoinsBalance += Delta;
+}
+
 void UStatsManager::SetDefaultValues()
 {
 	// Salud
