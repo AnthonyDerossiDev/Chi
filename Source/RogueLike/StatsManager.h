@@ -194,4 +194,12 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Stats")
 	void RecoverChiiHPInstant(float MaxHPPercentage);
+
+
+	// Valores que son leidos desde diferentes actores y sirven para guardar ciertos datos
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats|Initial values override")
+	float DronBaseDamage = 10;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Data Storage")
+	float DronDamageAdditives = 0;
+	
 };
