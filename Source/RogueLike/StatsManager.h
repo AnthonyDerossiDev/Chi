@@ -169,6 +169,8 @@ public:
 	int InitialProjectileSpeed = 1;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats|Initial values override")
 	int InitialHPRegeneration = 1;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats|Initial values override")
+	int DashCooldown = 5.0f;
 
 	// Función para actualizar el valor de una estadística
 	UFUNCTION(BlueprintCallable, Category = "Stats")
