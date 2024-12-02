@@ -18,4 +18,7 @@ public:
     UFUNCTION(BlueprintPure, Category = "Utility")
     static bool IsRunningInEditor();
 
+	UFUNCTION(BlueprintCallable, Category = "Utility")
+	bool IsPositionReachable(FVector Position);
+
 };
