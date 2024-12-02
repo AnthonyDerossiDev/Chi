@@ -3,6 +3,8 @@
 
 #include "UtilityLibrary.h"
 
+class UNavigationPath;
+
 bool UUtilityLibrary::IsRunningInEditor()
 {
 #if WITH_EDITOR
@@ -10,4 +12,15 @@ bool UUtilityLibrary::IsRunningInEditor()
 #else
 	return false; // Not in editor
 #endif
+}
+
+bool UUtilityLibrary::IsPositionReachable(FVector Position)
+{
+		FVector PathStart = GetPawn()->GetActorLocation();
+		UNavigationPath* NavPath = UNavigationSystem::FindPathToLocationSynchronously(GetWorld(), PathStart, Position, NULL);
+		
+		if (!NavPath)
+			return false;
+
+		return !NavPath->IsPartial();
 }
