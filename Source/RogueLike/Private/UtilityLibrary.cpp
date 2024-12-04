@@ -16,11 +16,11 @@ bool UUtilityLibrary::IsRunningInEditor()
 
 bool UUtilityLibrary::IsPositionReachable(FVector Position)
 {
-		FVector PathStart = GetPawn()->GetActorLocation();
-		UNavigationPath* NavPath = UNavigationSystem::FindPathToLocationSynchronously(GetWorld(), PathStart, Position, NULL);
-		
-		if (!NavPath)
-			return false;
-
-		return !NavPath->IsPartial();
+		//FVector PathStart = GetPawn()->GetActorLocation();
+		//UNavigationPath* NavPath = UNavigationSystem::FindPathToLocationSynchronously(GetWorld(), PathStart, Position, NULL);
+		return false;
+		// if (!NavPath)
+		// 	return false;
+		//
+		// return !NavPath->IsPartial();
 }
