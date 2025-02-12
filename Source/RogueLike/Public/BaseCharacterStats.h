@@ -2,13 +2,14 @@
 // The class that manages enemy stats will inherit from this one, as well as the class that manages the stats of player-controlled characters.
 // This is because there are several common stats, but not all of them.
 // Every stat shown in this class is shared among different characters, whether they are enemies or player-controlled characters.
-
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BaseCharacterStats.generated.h"
+
 
 USTRUCT(BlueprintType)
-struct FCharacterStats
+struct FSharedCharacterStats
 {
 	GENERATED_BODY();
 
@@ -56,10 +57,6 @@ struct FCharacterStats
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
     float CriticalDamage;
 
-    // Luck: A value that modifies other stats. The way it modifies depends on the object. For the character, it modifies critical chance and can affect money, item rarity, or special room appearance chances.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Miscellaneous")
-    float Luck;
-
     // Melee Range: The distance at which a melee attack hits entities.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
     float MeleeRange;
@@ -88,13 +85,6 @@ struct FCharacterStats
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
     float Delay;
 
-    // Penetration: The value indicating how many enemies a projectile hits before disappearing.
-    // 1 means it disappears after hitting the first enemy.
-    // 2 means it passes through the first enemy, applies its effect, and then continues to another enemy.
-    // Higher values allow for more enemies to be hit.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    int32 Penetration;
-
     // Lifesteal: Percentage of damage dealt converted into healing for the player.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
     float Lifesteal;
@@ -102,13 +92,6 @@ struct FCharacterStats
     // Invulnerable Frames: Number of frames in an animation during which the character is immune to all damage.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
     float InvulnerableFrames;
-
-    // Rebound: Indicates if a projectile redirects to another enemy after hitting the first one. 
-    // 0 means it disappears after hitting one enemy.
-    // 1 means it redirects to the closest enemy after hitting one.
-    // 2 means it can redirect up to two times.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    int32 Rebound;
 
     // True Damage: Damage dealt to the enemy's base health, ignoring their resistance or defense.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
@@ -162,26 +145,6 @@ struct FCharacterStats
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
     float KnockbackDistance;
 
-    // Out of Combat Regeneration: Health that regenerates after a defined time period (Out of Combat Delay) without taking damage.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Healing")
-    float OutOfCombatRegeneration;
-
-    // Out of Combat Delay: Time in seconds to wait before triggering out-of-combat health regeneration.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Healing")
-    float OutOfCombatDelay;
-
-    // Madness: The amount of madness added to the game when this entity is killed by the player.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Miscellaneous")
-    float Madness;
-
-    // Knowledge: The amount of knowledge added to the game when this entity is killed by the player.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Miscellaneous")
-    float Knowledge;
-
-    // Reaction Interval: Time window (in seconds) within which an enemy decides which ability to use.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float ReactionInterval;
-
     // On Hit Effect Chance: Probability that an effect will trigger when the player hits the enemy.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
     float OnHitEffectChance;
@@ -189,56 +152,16 @@ struct FCharacterStats
     // On Taking Damage (OTD) Effect Chance: Probability that an effect will trigger when the player takes damage from the enemy.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
     float OnTakingDamageEffectChance;
-
-	FCharacterStats():
-	BaseHealth(0),
-	MaxHealth(0),
-	CurrentHealth(0),
-	TemporaryHealth(0),
-	MovementSpeed(0),
-	Attack(0),
-	AttackSpeed(0),
-	ProjectileSpeed(0),
-	Defense(0),
-	CriticalChance(0),
-    CriticalDamage(0),
-	Luck(0),
-	MeleeRange(0),
-	RangedRange(0),
-	Spread(0),
-	Accuracy(0),
-	CharacterSize(0), AOE(0),
-	Delay(0),
-	Penetration(0),
-	Lifesteal(0),
-	InvulnerableFrames(0),
-	Rebound(0), TrueDamage(0),
-	DOTMultiplier(0),
-	DOTDuration(0),
-	DOTTick(0),
-	Cooldown(0),
-	HealingAmount(0),
-	HOTAmount(0),
-	HOTTick(0),
-	HOTDuration(0),
-	StunChance(0),
-	StunDuration(0),
-	KnockbackChance(0),
-	KnockbackDistance(0),
-	OutOfCombatRegeneration(0),
-	OutOfCombatDelay(0),
-	Madness(0), Knowledge(0),
-	ReactionInterval(0),
-	OnHitEffectChance(0),
-	OnTakingDamageEffectChance(0)                   
-	{
-	}
+	
 };
 
-
-class ROGUELIKE_API BaseCharacterStats
+UCLASS()
+class ROGUELIKE_API UBaseCharacterStats : public UObject
 {
+	GENERATED_BODY()
+protected:
+	UBaseCharacterStats();
 public:
-	BaseCharacterStats();
-	~BaseCharacterStats();
+	UPROPERTY(BlueprintReadWrite)
+	FSharedCharacterStats CharacterStats;
 };
