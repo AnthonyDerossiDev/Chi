@@ -7,160 +7,166 @@
 #include "CoreMinimal.h"
 #include "BaseCharacterStats.generated.h"
 
+USTRUCT(BlueprintType)
+struct FFloatPair
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Value;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float LevelIncrement;
+};
+
 
 USTRUCT(BlueprintType)
-struct FSharedCharacterStats
+struct FSharedCharacterStats : public FTableRowBase
 {
 	GENERATED_BODY();
 
 	// Base Health: The base health points of a character. These are not the current or maximum health, but the number upon which modifications are made.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
-    float BaseHealth;
+    FFloatPair BaseHealth;
 
     // Max Health: The maximum health a character can have, cannot be healed above this value.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
-    float MaxHealth;
+    FFloatPair MaxHealth;
 
     // Current Health: Represents the character's current health. If it reaches zero, the character dies.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
-    float CurrentHealth;
+    FFloatPair CurrentHealth;
 
     // Temporary Health: A temporary health value independent of the current health that can exceed the maximum health. Always lost or reduced before current health.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
-    float TemporaryHealth;
+    FFloatPair TemporaryHealth;
 
     // Movement Speed: Statistic that controls how fast a character moves.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
-    float MovementSpeed;
+    FFloatPair MovementSpeed;
 
     // Attack: Value measured against the opponent's defense to calculate the final damage.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float Attack;
+    FFloatPair Attack;
 
     // Attack Speed: Statistic that indicates how fast a character attacks. 1 means one attack per second.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float AttackSpeed;
+    FFloatPair AttackSpeed;
 
     // Projectile Speed: Statistic indicating how fast a projectile moves. Measured in units per second.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float ProjectileSpeed;
+    FFloatPair ProjectileSpeed;
 
     // Defense: Value that mitigates the final damage by opposing the attack.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float Defense;
+    FFloatPair Defense;
 
     // Critical Chance: Probability that an attack will be a critical hit.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float CriticalChance;
+    FFloatPair CriticalChance;
 
     // Critical Damage: Multiplier to the base damage used for calculating the final damage on a critical hit.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float CriticalDamage;
-
-    // Melee Range: The distance at which a melee attack hits entities.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float MeleeRange;
+    FFloatPair CriticalDamage;
 
     // Ranged Range: Maximum distance a projectile fired from a ranged weapon travels.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float RangedRange;
+    FFloatPair RangedRange;
 
     // Spread: The maximum angle at which a projectile can deviate when fired.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float Spread;
+    FFloatPair Spread;
 
     // Accuracy: The probability that a projectile will miss or deviate from its intended path.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float Accuracy;
+    FFloatPair Accuracy;
 
     // Character Size: Scale of the character in the game, affecting the size of the collider and making it easier or harder to hit.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Miscellaneous")
-    float CharacterSize;
+    FFloatPair CharacterSize;
 
     // AOE (Area of Effect Diameter): Size of the area affected by an area attack.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float AOE;
+    FFloatPair AOE;
 
     // Delay: The time it takes for an ability to start its effect after being cast. Can also define the interval between different effects in the same ability.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float Delay;
+    FFloatPair Delay;
 
     // Lifesteal: Percentage of damage dealt converted into healing for the player.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float Lifesteal;
+    FFloatPair Lifesteal;
 
     // Invulnerable Frames: Number of frames in an animation during which the character is immune to all damage.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float InvulnerableFrames;
+    FFloatPair InvulnerableFrames;
 
     // True Damage: Damage dealt to the enemy's base health, ignoring their resistance or defense.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float TrueDamage;
+    FFloatPair TrueDamage;
 
     // Damage Over Time (DOT): A multiplier applied to the attack to calculate continuous damage over time.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float DOTMultiplier;
+    FFloatPair DOTMultiplier;
 
     // DOT Duration: Duration for how long Damage Over Time lasts before it stops affecting the enemy.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float DOTDuration;
+    FFloatPair DOTDuration;
 
     // DOT Tick: Interval in seconds between each damage tick of Damage Over Time.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float DOTTick;
+    FFloatPair DOTTick;
 
     // Cooldown: Time required for an ability or action to become available again.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float Cooldown;
+    FFloatPair Cooldown;
 
     // Healing Amount: Value representing the amount of health restored with an instant healing action.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Healing")
-    float HealingAmount;
+    FFloatPair HealingAmount;
 
     // HOT (Healing Over Time): Amount of health healed per tick when the character is under a healing-over-time effect.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Healing")
-    float HOTAmount;
+    FFloatPair HOTAmount;
 
     // HOT Tick: Interval in seconds between each healing tick of HOT (Healing Over Time).
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Healing")
-    float HOTTick;
+    FFloatPair HOTTick;
 
     // HOT Duration: Duration of how long the HOT lasts before it stops healing the character.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Healing")
-    float HOTDuration;
+    FFloatPair HOTDuration;
 
     // Stun Chance: Probability that an enemy will be stunned upon being attacked.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float StunChance;
+    FFloatPair StunChance;
 
     // Stun Duration: The duration of the stun effect during which the enemy cannot perform actions.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float StunDuration;
+    FFloatPair StunDuration;
 
     // Knockback Chance: Probability that an attack will knock back an enemy.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float KnockbackChance;
+    FFloatPair KnockbackChance;
 
     // Knockback Distance: The distance an enemy is pushed back when hit by an attack.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float KnockbackDistance;
+    FFloatPair KnockbackDistance;
 
     // On Hit Effect Chance: Probability that an effect will trigger when the player hits the enemy.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float OnHitEffectChance;
+    FFloatPair OnHitEffectChance;
 
     // On Taking Damage (OTD) Effect Chance: Probability that an effect will trigger when the player takes damage from the enemy.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    float OnTakingDamageEffectChance;
-	
+    FFloatPair OnTakingDamageEffectChance;
 };
 
 UCLASS()
 class ROGUELIKE_API UBaseCharacterStats : public UObject
 {
 	GENERATED_BODY()
-protected:
-	UBaseCharacterStats();
+	
 public:
 	UPROPERTY(BlueprintReadWrite)
 	FSharedCharacterStats CharacterStats;

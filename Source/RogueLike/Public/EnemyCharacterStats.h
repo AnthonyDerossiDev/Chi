@@ -26,13 +26,13 @@
 #include "EnemyCharacterStats.generated.h"
 
 USTRUCT(BlueprintType)
-struct FEnemyStats
+struct FEnemyStats : public FTableRowBase
 {
 	GENERATED_BODY()
 	
 	// Reaction Interval: Time window (in seconds) within which an enemy decides which ability to use.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-	float ReactionInterval;
+	FFloatPair ReactionInterval;
 };
 
 UCLASS()
@@ -40,7 +40,7 @@ class ROGUELIKE_API UEnemyCharacterStats : public UBaseCharacterStats
 {
 	GENERATED_BODY()
 
-	UEnemyCharacterStats();
+	
 public:
 	UPROPERTY(BlueprintReadWrite)
 	FEnemyStats EnemyStats;

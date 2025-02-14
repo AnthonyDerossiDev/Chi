@@ -3,7 +3,4 @@
 
 #include "EnemyCharacterStats.h"
 
-UEnemyCharacterStats::UEnemyCharacterStats()
-{
-	EnemyStats.ReactionInterval = 5.0f;
-}
+
