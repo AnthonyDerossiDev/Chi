@@ -5,7 +5,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "BaseCharacterStats.generated.h"
+#include "CharactersStats.generated.h"
 
 USTRUCT(BlueprintType)
 struct FFloatPair
@@ -21,7 +21,7 @@ struct FFloatPair
 
 
 USTRUCT(BlueprintType)
-struct FSharedCharacterStats : public FTableRowBase
+struct FSharedCharacterStats
 {
 	GENERATED_BODY();
 
@@ -85,9 +85,12 @@ struct FSharedCharacterStats : public FTableRowBase
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Miscellaneous")
     FFloatPair CharacterSize;
 
-    // AOE (Area of Effect Diameter): Size of the area affected by an area attack.
+    // AOE (Area of Effect Size): Size of the area affected by an area attack.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
-    FFloatPair AOE;
+    FFloatPair AOESize;
+    // AOE (Area of Effect Damage): Damage dealt inside damage area.
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
+    FFloatPair AOEDamage;
 
     // Delay: The time it takes for an ability to start its effect after being cast. Can also define the interval between different effects in the same ability.
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
@@ -162,12 +165,56 @@ struct FSharedCharacterStats : public FTableRowBase
     FFloatPair OnTakingDamageEffectChance;
 };
 
-UCLASS()
-class ROGUELIKE_API UBaseCharacterStats : public UObject
+USTRUCT(BlueprintType)
+struct FPlayableStats : public FTableRowBase
 {
 	GENERATED_BODY()
 	
-public:
-	UPROPERTY(BlueprintReadWrite)
-	FSharedCharacterStats CharacterStats;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FSharedCharacterStats SharedStats;
+	
+	// Luck: A value that modifies other stats. The way it modifies depends on the object. For the character, it modifies critical chance and can affect money, item rarity, or special room appearance chances.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Miscellaneous")
+	FFloatPair Luck;
+
+	// Penetration: The value indicating how many enemies a projectile hits before disappearing.
+	// 1 means it disappears after hitting the first enemy.
+	// 2 means it passes through the first enemy, applies its effect, and then continues to another enemy.
+	// Higher values allow for more enemies to be hit.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
+	FFloatPair Penetration;
+	
+	// Rebound: Indicates if a projectile redirects to another enemy after hitting the first one. 
+	// 0 means it disappears after hitting one enemy.
+	// 1 means it redirects to the closest enemy after hitting one.
+	// 2 means it can redirect up to two times.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
+	FFloatPair Rebound;
+
+	// Out of Combat Regeneration: Health that regenerates after a defined time period (Out of Combat Delay) without taking damage.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Healing")
+	FFloatPair OutOfCombatRegeneration;
+	
+	// Out of Combat Delay: Time in seconds to wait before triggering out-of-combat health regeneration.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Healing")
+	FFloatPair OutOfCombatDelay;
+};
+
+USTRUCT()
+struct FEnemyStats : public FTableRowBase
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
+	FSharedCharacterStats SharedStats;
+	
+	// Reaction Interval: Time window (in seconds) within which an enemy decides which ability to use.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
+	FFloatPair ReactionInterval;
+};
+
+UCLASS()
+class ROGUELIKE_API UCharactersStats : public UObject
+{
+	GENERATED_BODY()
 };

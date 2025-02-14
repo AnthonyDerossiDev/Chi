@@ -12,21 +12,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3a75051-9c2b-4f68-ae54-a910a4eb4eb7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/Enemies/DA_Stats_Enemy_EyeCrawler.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/Enemies/DA_Stats_Enemy_FlyingEye.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/Enemies/DA_Stats_Enemy_TentacleHead.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/EnemyCharacterStats.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/PlayableCharacterStats.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/Players/DA_Stats_Chii.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/SharedCharactersStats.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/DA_EnemiesStats.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/DA_PlayableCharactersStats.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/DA_PlayableCharactersStats.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/Enemies/DA_Stats_Enemy_EyeCrawler.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/Enemies/DA_Stats_Enemy_FlyingEye.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/Enemies/DA_Stats_Enemy_TentacleHead.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/EnemyCharacterStats.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/NewBlueprint.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/NewDataAsset.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/NewDataTable.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/PlayableCharacterStats.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/Players/DA_Stats_Chii.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/Players/DA_Stats_Enemy_TentacleHead.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DataTypes/DataTables/Stats/SharedCharactersStats.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Developers/Anthony/DevTestLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Developers/Anthony/DevTestLevel.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Private/BaseCharacterStats.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Private/BaseCharacterStats.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Private/EnemyCharacterStats.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Private/EnemyCharacterStats.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Private/PlayableCharacterStats.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Private/PlayableCharacterStats.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/BaseCharacterStats.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Public/BaseCharacterStats.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/EnemyCharacterStats.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Public/EnemyCharacterStats.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/PlayableCharacterStats.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Public/PlayableCharacterStats.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Private/BaseCharacterStats.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Private/CharactersStats.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Private/EnemyCharacterStats.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Private/PlayableCharacterStats.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/BaseCharacterStats.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Public/CharactersStats.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/EnemyCharacterStats.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/PlayableCharacterStats.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -514,6 +521,8 @@
       <workItem from="1734117275659" duration="599000" />
       <workItem from="1739366774533" duration="10905000" />
       <workItem from="1739473327461" duration="5682000" />
+      <workItem from="1739554625330" duration="1472000" />
+      <workItem from="1739568353623" duration="4789000" />
     </task>
     <servers />
   </component>
