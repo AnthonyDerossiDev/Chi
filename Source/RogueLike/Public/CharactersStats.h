@@ -7,6 +7,65 @@
 #include "CoreMinimal.h"
 #include "CharactersStats.generated.h"
 
+UENUM(BlueprintType)
+enum class ECharacterStatType : uint8
+{
+    // Health Stats
+    BaseHealth           UMETA(DisplayName = "Base Health"),
+    MaxHealth            UMETA(DisplayName = "Max Health"),
+    CurrentHealth        UMETA(DisplayName = "Current Health"),
+    TemporaryHealth      UMETA(DisplayName = "Temporary Health"),
+
+    // Movement Stats
+    MovementSpeed        UMETA(DisplayName = "Movement Speed"),
+
+    // Combat Stats
+    Attack               UMETA(DisplayName = "Attack"),
+    AttackSpeed          UMETA(DisplayName = "Attack Speed"),
+    ProjectileSpeed      UMETA(DisplayName = "Projectile Speed"),
+    Defense              UMETA(DisplayName = "Defense"),
+    CriticalChance       UMETA(DisplayName = "Critical Chance"),
+    CriticalDamage       UMETA(DisplayName = "Critical Damage"),
+    RangedRange          UMETA(DisplayName = "Ranged Range"),
+    Spread               UMETA(DisplayName = "Spread"),
+    Accuracy             UMETA(DisplayName = "Accuracy"),
+
+    // Miscellaneous Combat Stats
+    AOESize              UMETA(DisplayName = "AOE Size"),
+    AOEDamage            UMETA(DisplayName = "AOE Damage"),
+    Delay                UMETA(DisplayName = "Delay"),
+    Lifesteal            UMETA(DisplayName = "Lifesteal"),
+    InvulnerableFrames   UMETA(DisplayName = "Invulnerable Frames"),
+    TrueDamage           UMETA(DisplayName = "True Damage"),
+    DOTMultiplier        UMETA(DisplayName = "DOT Multiplier"),
+    DOTDuration          UMETA(DisplayName = "DOT Duration"),
+    DOTTick              UMETA(DisplayName = "DOT Tick"),
+    Cooldown             UMETA(DisplayName = "Cooldown"),
+
+    // Healing Stats
+    HealingAmount        UMETA(DisplayName = "Healing Amount"),
+    HOTAmount            UMETA(DisplayName = "HOT Amount"),
+    HOTTick              UMETA(DisplayName = "HOT Tick"),
+    HOTDuration          UMETA(DisplayName = "HOT Duration"),
+
+    // Combat Effects
+    StunChance           UMETA(DisplayName = "Stun Chance"),
+    StunDuration         UMETA(DisplayName = "Stun Duration"),
+    KnockbackChance      UMETA(DisplayName = "Knockback Chance"),
+    KnockbackDistance    UMETA(DisplayName = "Knockback Distance"),
+    OnHitEffectChance    UMETA(DisplayName = "On Hit Effect Chance"),
+    OnTakingDamageEffectChance UMETA(DisplayName = "On Taking Damage Effect Chance"),
+
+    // Miscellaneous
+    CharacterSize        UMETA(DisplayName = "Character Size"),
+    Luck                 UMETA(DisplayName = "Luck"),
+    Penetration          UMETA(DisplayName = "Penetration"),
+    Rebound              UMETA(DisplayName = "Rebound"),
+    OutOfCombatRegeneration UMETA(DisplayName = "Out of Combat Regeneration"),
+    OutOfCombatDelay     UMETA(DisplayName = "Out of Combat Delay")
+};
+
+
 USTRUCT(BlueprintType)
 struct FFloatPair
 {

@@ -4,12 +4,72 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/SaveGame.h"
-#include "CharactersStats.h"
 #include "GameData.generated.h"
 
-/**
- * 
- */
+// Estructura que almacena el valor y el factor de aumento del stat
+USTRUCT(BlueprintType)
+struct FStatData
+{
+	GENERATED_BODY()
+
+	// Valor del stat
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
+	float StatValue;
+
+	// Factor de incremento del stat por nivel
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
+	float LevelIncreaseFactor;
+
+	FStatData()
+		: StatValue(0.0f), LevelIncreaseFactor(1.0f) {}
+
+	FStatData(float InStatValue, float InLevelIncreaseFactor)
+		: StatValue(InStatValue), LevelIncreaseFactor(InLevelIncreaseFactor) {}
+};
+
+USTRUCT(BlueprintType)
+struct FPlayerData
+{
+	GENERATED_BODY()
+
+	// TMap para almacenar las estadísticas de cada stat, incluyendo el factor de incremento por nivel
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
+	TMap<ECharacterStatType, FStatData> StatValues;
+
+	// Función para modificar un stat específico
+	void SetStat(ECharacterStatType StatType, float Value)
+	{
+		if (StatValues.Contains(StatType))
+		{
+			StatValues[StatType].StatValue = Value;
+		}
+		else
+		{
+			// Si no existe, creamos el stat con el factor de incremento por defecto (1.0f)
+			StatValues.Add(StatType, FStatData(Value, 1.0f));  // Default LevelIncreaseFactor
+		}
+	}
+
+	// Función para obtener el valor de un stat específico
+	float GetStat(ECharacterStatType StatType)
+	{
+		if (StatValues.Contains(StatType))
+		{
+			return StatValues[StatType].StatValue;
+		}
+		return 0.0f;  // Valor por defecto si no se encuentra el stat
+	}
+
+	// Función para aumentar el stat según el factor de nivel
+	void IncreaseStatForLevel(ECharacterStatType StatType)
+	{
+		if (StatValues.Contains(StatType))
+		{
+			StatValues[StatType].StatValue *= StatValues[StatType].LevelIncreaseFactor;
+		}
+	}
+};
+
 UCLASS()
 class ROGUELIKE_API UGameData : public USaveGame
 {
@@ -17,6 +77,12 @@ class ROGUELIKE_API UGameData : public USaveGame
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
-	TMap<FString, FPlayableStats> CharactersStats;
+	TMap<FString, FPlayerData> CharactersStats;
+
+	UFUNCTION(BlueprintCallable)
+	void ModifyCharacterStat(const FString& CharacterName, ECharacterStatType StatType, float Modifier);
+	UFUNCTION(BlueprintCallable)
+	void InitializePlayerStats(FPlayerData& PlayerData);
+
 	
 };

@@ -3,3 +3,26 @@
 
 #include "GameData.h"
 
+void UGameData::ModifyCharacterStat(const FString& CharacterName, ECharacterStatType StatType, float Modifier)
+{
+	// Verificamos si el personaje existe en el mapa
+	if (CharactersStats.Contains(CharacterName))
+	{
+		// Obtener las estadísticas del personaje
+		FPlayerData& Data = CharactersStats[CharacterName];
+        
+		// Obtener el valor actual del stat
+		float CurrentValue = Data.GetStat(StatType);
+        
+		// Modificar el stat con el modificador
+		Data.SetStat(StatType, CurrentValue + Modifier);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Character %s not found!"), *CharacterName);
+	}
+}
+
+void UGameData::InitializePlayerStats(FPlayerData& PlayerData)
+{
+}
