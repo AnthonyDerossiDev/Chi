@@ -60,6 +60,15 @@ struct FPlayerData
 		return 0.0f;  // Valor por defecto si no se encuentra el stat
 	}
 
+	float GetIncrementPerLevel(ECharacterStatType StatType)
+	{
+		if(StatValues.Contains(StatType))
+		{
+			return StatValues[StatType].LevelIncreaseFactor;
+		}
+		return 0.0f;
+	}
+
 	// Función para aumentar el stat según el factor de nivel
 	void IncreaseStatForLevel(ECharacterStatType StatType)
 	{
@@ -75,6 +84,11 @@ class ROGUELIKE_API UGameData : public USaveGame
 {
 	GENERATED_BODY()
 
+private:
+	float AdditiveValues = 0.0f;
+	float MultiplicativeValues = 0.0f;
+	float DivisorValues = 0.0f;
+
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
 	TMap<FString, FPlayerData> CharactersStats;
@@ -83,6 +97,27 @@ public:
 	void ModifyCharacterStat(const FString& CharacterName, ECharacterStatType StatType, float Modifier);
 	UFUNCTION(BlueprintCallable)
 	void InitializePlayerStats(FPlayerData& PlayerData);
+
+	/// @brief Retrieves the current value of a specified character stat. This value does not include additive, multiplicative, or divisor modifications provided by items.
+	/// @param CharacterName The name of the character whose stat is being queried.
+	/// @param StatType The specific stat to retrieve (e.g., Health, Attack Power).
+	/// @param CharacterLevel (Optional) The level of the character. Defaults to 1.
+	/// @param SkillVariable (Optional) A multiplier value based on the skill used. Defaults to 1.0f.
+	/// @return The base value of the requested stat.
+	UFUNCTION(BlueprintCallable)
+	float GetCurrentStat(const FString& CharacterName, ECharacterStatType StatType, int CharacterLevel = 1, float SkillVariable = 1.0f);
+
+	/// @brief Retrieves the current value of a specified character stat. This value does not include additive, multiplicative, or divisor modifications provided by items.
+	/// @param CharacterName The name of the character whose stat is being queried.
+	/// @param StatType The specific stat to retrieve (e.g., Health, Attack Power).
+	/// @param CharacterLevel (Optional) The level of the character. Defaults to 1.
+	/// @param SkillVariable (Optional) A multiplier value based on the skill used. Defaults to 1.0f.
+	/// @return The base value of the requested stat.
+	UFUNCTION(BlueprintCallable)
+	float GetFinalStat(const FString& CharacterName, ECharacterStatType StatType, int CharacterLevel = 1, float SkillVariable = 1.0f);
+	
+
+	
 
 	
 };

@@ -26,3 +26,31 @@ void UGameData::ModifyCharacterStat(const FString& CharacterName, ECharacterStat
 void UGameData::InitializePlayerStats(FPlayerData& PlayerData)
 {
 }
+
+float UGameData::GetCurrentStat(const FString& CharacterName, ECharacterStatType StatType, const int CharacterLevel, float SkillVariable)
+{
+	float FinalStatWithNoObjects = 0.0f;
+	
+	if(CharactersStats.Contains(CharacterName))
+	{
+		FPlayerData& Data = CharactersStats[CharacterName];
+		float BaseStat = Data.GetStat(StatType);
+		float StatIncrementPerLevel = Data.GetIncrementPerLevel(StatType);
+
+		FinalStatWithNoObjects = (BaseStat + (StatIncrementPerLevel*(CharacterLevel - 1))) * SkillVariable;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Character %s not found!"), *CharacterName);
+	}
+	
+	return FinalStatWithNoObjects;
+}
+
+float UGameData::GetFinalStat(const FString& CharacterName, ECharacterStatType StatType, int CharacterLevel, float SkillVariable)
+{
+	float CurrentStatValue = GetCurrentStat(CharacterName, StatType, CharacterLevel, SkillVariable);
+	float FinalStatValue = CurrentStatValue * (MultiplicativeValues/DivisorValues) + AdditiveValues;
+	return FinalStatValue;
+}
+
