@@ -13,10 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b3a75051-9c2b-4f68-ae54-a910a4eb4eb7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/BP_CombatCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/BP_CombatCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Private/GameData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Private/GameData.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/GameData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Public/GameData.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -512,7 +508,7 @@
       <workItem from="1739568353623" duration="4789000" />
       <workItem from="1739725646855" duration="3863000" />
       <workItem from="1739807738852" duration="11350000" />
-      <workItem from="1739989075573" duration="6561000" />
+      <workItem from="1739989075573" duration="8789000" />
     </task>
     <servers />
   </component>
