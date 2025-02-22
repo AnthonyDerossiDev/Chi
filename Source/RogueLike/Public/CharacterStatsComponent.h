@@ -48,10 +48,15 @@ protected:
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Stats configuration")
 	ECharacter CharacterName;
+
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Stats configuration")
 	UCharacterStatsData* CharacterBaseStatsData;
+
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Stats configuration")
 	TMap<ECharacterStatType, FStat> CurrentPlayerStatsMap;
+
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Data")
+	int CurrentPlayerLevel;
 	
 
 public:	
@@ -60,5 +65,17 @@ public:
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 
 	UFUNCTION(BlueprintCallable)
-	void AddStatData(ECharacterStatType Stat, float AdditveDelta, float MultiplicativeDelta, float DivisorDelta);
+	void AddStatData(ECharacterStatType Stat, float AdditiveDelta, float MultiplicativeDelta, float DivisorDelta);
+
+	UFUNCTION(BlueprintCallable)
+	float GetCurrentStat(ECharacterStatType Stat);
+
+	UFUNCTION(BlueprintCallable)
+	float GetCurrentStatWithSkill(ECharacterStatType Stat, float SkillVariable);
+
+	UFUNCTION(BlueprintCallable)
+	float GetFinalStat(ECharacterStatType Stat);
+
+	UFUNCTION(BlueprintCallable)
+	float GetFinalStatWithSkill(ECharacterStatType Stat, float SkillVariable);
 };

@@ -12,47 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3a75051-9c2b-4f68-ae54-a910a4eb4eb7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/DataTypes/DataTables/CharacterBaseStats_Chii.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/DataTypes/Structs/S_StatAdditionData.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RogueLike/Private/CharacterStatsComponent.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RogueLike/Private/CharacterStatsData.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RogueLike/Public/CharacterStatsComponent.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RogueLike/Public/CharacterStatsData.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Enemies/BP_EnemyBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Enemies/BP_EnemyBase.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/BP_CombatCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/BP_CombatCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/ChiiVersions/BP_CombatControl_Chii.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/ChiiVersions/BP_CombatControl_Chii.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/OLD/BP_Chi.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/OLD/BP_Chi.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/Weapons/BPC_Weapon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/Weapons/BPC_Weapon.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/FunctionLibraries/BPFLibrary.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/FunctionLibraries/BPFLibrary.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Gamemodes/BP_ChiGamemode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Gamemodes/BP_ChiGamemode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Gamemodes/ChiGameInstance.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Gamemodes/ChiGameInstance.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/BP_BasePickUpObject.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/BP_BasePickUpObject.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/BP_BasePickUpObject_NonStatAffector.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/BP_BasePickUpObject_NonStatAffector.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/BP_PickUpObjectsManager.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/BP_PickUpObjectsManager.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BO_MoreCadenceOnKillController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BO_MoreCadenceOnKillController.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_HigherCadenceHigherCritController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_HigherCadenceHigherCritController.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_AvoidDeath.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_AvoidDeath.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_DronChance.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_DronChance.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_ExplosiveAtacks.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_ExplosiveAtacks.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_HPOrbChance.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_HPOrbChance.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_HigherCadenceHigherCritDamage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_HigherCadenceHigherCritDamage.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_HigherShootDistanceHigherDamage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_HigherShootDistanceHigherDamage.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_InvisibleOnKill.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_InvisibleOnKill.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_MoreCadenceOnKill.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_MoreCadenceOnKill.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_SpawnBallOnHitChance.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_SpawnBallOnHitChance.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/StatsAffectors/BP_BasePickUpObject_IncreaseMaxHealth.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/StatsAffectors/BP_BasePickUpObject_IncreaseMaxHealth.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/UI/Tutorials/W_ItemDataOnScreen.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/UI/Tutorials/W_ItemDataOnScreen.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/UI/W_Inventory.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/UI/W_Inventory.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DataTypes/DataTables/PickUpObjects/Data_PickUps.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DataTypes/DataTables/PickUpObjects/Data_PickUps.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DataTypes/Structs/S_PickUpObjectData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DataTypes/Structs/S_PickUpObjectData.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Developers/Anthony/DevTestLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Developers/Anthony/DevTestLevel.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Private/CharactersStats.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Private/GameData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Private/GameData.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/CharactersStats.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/GameData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Public/GameData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Private/CharacterStatsComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Private/CharacterStatsComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/CharacterStatsComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Public/CharacterStatsComponent.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -549,7 +514,7 @@
       <workItem from="1739725646855" duration="3863000" />
       <workItem from="1739807738852" duration="11350000" />
       <workItem from="1739989075573" duration="8789000" />
-      <workItem from="1740179025975" duration="8139000" />
+      <workItem from="1740179025975" duration="9741000" />
     </task>
     <servers />
   </component>

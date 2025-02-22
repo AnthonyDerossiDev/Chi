@@ -97,4 +97,96 @@ void UCharacterStatsComponent::AddStatData(ECharacterStatType Stat, float Additi
 	}
 }
 
+float UCharacterStatsComponent::GetCurrentStat(ECharacterStatType Stat)
+{
+	float FinalStatWithNoObjects = 0.0f;
+	CurrentPlayerLevel = CurrentPlayerLevel <= 0 ? 1 : CurrentPlayerLevel;
+	if(CurrentPlayerStatsMap.Contains(Stat))
+	{
+		float CurrentState = CurrentPlayerStatsMap[Stat].Value;
+		float StatIncrementByLevel = CurrentPlayerStatsMap[Stat].LevelIncrement;
+		FinalStatWithNoObjects = (CurrentState + (StatIncrementByLevel*(CurrentPlayerLevel - 1)));
+	}
+	else
+	{
+		FString StatName = UEnum::GetValueAsString(Stat);
+		FString ErrorMessage = FString::Printf(TEXT("Error: No se pudo encontrar el stat solicitado: %s"), *StatName);
+
+		// Imprimir error en pantalla
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, ErrorMessage);
+	}
+	return FinalStatWithNoObjects;
+}
+
+float UCharacterStatsComponent::GetCurrentStatWithSkill(ECharacterStatType Stat, float SkillVariable)
+{
+	float FinalStatWithNoObjects = 0.0f;
+	CurrentPlayerLevel = CurrentPlayerLevel <= 0 ? 1 : CurrentPlayerLevel;
+	if(CurrentPlayerStatsMap.Contains(Stat))
+	{
+		float CurrentState = CurrentPlayerStatsMap[Stat].Value;
+		float StatIncrementByLevel = CurrentPlayerStatsMap[Stat].LevelIncrement;
+		FinalStatWithNoObjects = (CurrentState + (StatIncrementByLevel*(CurrentPlayerLevel - 1))) * SkillVariable;
+	}
+	else
+	{
+		FString StatName = UEnum::GetValueAsString(Stat);
+		FString ErrorMessage = FString::Printf(TEXT("Error: No se pudo encontrar el stat solicitado: %s"), *StatName);
+
+		// Imprimir error en pantalla
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, ErrorMessage);
+	}
+	return FinalStatWithNoObjects;
+}
+
+float UCharacterStatsComponent::GetFinalStat(ECharacterStatType Stat)
+{
+	float FinalStatValue = 0.f;
+	if(CurrentPlayerStatsMap.Contains(Stat))
+	{
+		FStat& SelectedStat = CurrentPlayerStatsMap[Stat];
+	
+		float CurrentStatValue = GetCurrentStat(Stat);
+		float AdditiveValues = SelectedStat.CurrentAdditiveValues;
+		float MultiplicativeValues = SelectedStat.CurrentMultiplicativeValues;
+		float DivisorValues = SelectedStat.CurrentDivisorValues;
+		FinalStatValue = CurrentStatValue * (MultiplicativeValues/DivisorValues) + AdditiveValues;
+
+	}
+	else
+	{
+		FString StatName = UEnum::GetValueAsString(Stat);
+		FString ErrorMessage = FString::Printf(TEXT("Error: No se pudo encontrar el stat solicitado: %s"), *StatName);
+
+		// Imprimir error en pantalla
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, ErrorMessage);
+	}
+	return FinalStatValue;
+}
+
+float UCharacterStatsComponent::GetFinalStatWithSkill(ECharacterStatType Stat, float SkillVariable)
+{
+	float FinalStatValue = 0.f;
+	if(CurrentPlayerStatsMap.Contains(Stat))
+	{
+		FStat& SelectedStat = CurrentPlayerStatsMap[Stat];
+	
+		float CurrentStatValue = GetCurrentStatWithSkill(Stat, SkillVariable);
+		float AdditiveValues = SelectedStat.CurrentAdditiveValues;
+		float MultiplicativeValues = SelectedStat.CurrentMultiplicativeValues;
+		float DivisorValues = SelectedStat.CurrentDivisorValues;
+		FinalStatValue = CurrentStatValue * (MultiplicativeValues/DivisorValues) + AdditiveValues;
+
+	}
+	else
+	{
+		FString StatName = UEnum::GetValueAsString(Stat);
+		FString ErrorMessage = FString::Printf(TEXT("Error: No se pudo encontrar el stat solicitado: %s"), *StatName);
+
+		// Imprimir error en pantalla
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, ErrorMessage);
+	}
+	return FinalStatValue;
+}
+
 
