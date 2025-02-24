@@ -95,8 +95,30 @@ public:
 	// /// @return The base value of the requested stat.
 	// UFUNCTION(BlueprintCallable)
 	// float GetFinalStat(const FString& CharacterName, ECharacterStatType StatType, int CharacterLevel = 1, float SkillVariable = 1.0f);
-	
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Graphics Settings")
+	bool bMotionBlurActivated = true;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Graphics Settings")
+	bool bRTXActivated = true;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio Settings")
+	float MasterAudioVolume = 80.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio Settings")
+	float MusicAudioVolume = 80.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio Settings")
+	float SFXAudioVolume = 80.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio Settings")
+	float VoicesAudioVolume = 80.0f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay Settings")
+	float CameraSensitivity = 5.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay Settings")
+	bool bIsYAxisInverted = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Accessibility Settings")
+	bool bIsColorblindMode = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Accessibility Settings")
+	float SubtitlesSize = 50.0f;
 	
 
 	
