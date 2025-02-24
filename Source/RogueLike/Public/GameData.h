@@ -110,6 +110,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio Settings")
 	float VoicesAudioVolume = 80.0f;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay Settings")
+	float CameraSensitivity = 5.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay Settings")
+	bool bIsYAxisInverted = false;
 
 	
 
