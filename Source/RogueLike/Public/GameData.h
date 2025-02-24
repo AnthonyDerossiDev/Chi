@@ -115,6 +115,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay Settings")
 	bool bIsYAxisInverted = false;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Accessibility Settings")
+	bool bIsColorblindMode = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Accessibility Settings")
+	float SubtitlesSize = 50.0f;
 	
 
 	
