@@ -95,6 +95,11 @@ public:
 	// /// @return The base value of the requested stat.
 	// UFUNCTION(BlueprintCallable)
 	// float GetFinalStat(const FString& CharacterName, ECharacterStatType StatType, int CharacterLevel = 1, float SkillVariable = 1.0f);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings")
+	bool bMotionBlurActivated = true;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings")
+	bool bRTXActivated = true;
 	
 
 	
