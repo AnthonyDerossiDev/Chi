@@ -96,10 +96,19 @@ public:
 	// UFUNCTION(BlueprintCallable)
 	// float GetFinalStat(const FString& CharacterName, ECharacterStatType StatType, int CharacterLevel = 1, float SkillVariable = 1.0f);
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Graphics Settings")
 	bool bMotionBlurActivated = true;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Settings")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Graphics Settings")
 	bool bRTXActivated = true;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio Settings")
+	float MasterAudioVolume = 80.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio Settings")
+	float MusicAudioVolume = 80.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio Settings")
+	float SFXAudioVolume = 80.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio Settings")
+	float VoicesAudioVolume = 80.0f;
 	
 
 	
