@@ -65,15 +65,6 @@ struct FEnemyStat
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float LevelIncrement;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float CurrentAdditiveValues;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float CurrentMultiplicativeValues;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float CurrentDivisorValues;
 };
 
 USTRUCT(BlueprintType)
