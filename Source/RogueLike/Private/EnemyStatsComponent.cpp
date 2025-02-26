@@ -32,3 +32,61 @@ void UEnemyStatsComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 	// ...
 }
 
+#if WITH_EDITOR
+void UEnemyStatsComponent::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
+{
+	Super::PostEditChangeProperty(PropertyChangedEvent);
+
+	if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UEnemyStatsComponent, EnemyStatsData))
+	{
+		if (EnemyStatsData != nullptr)
+		{
+			CurrentEnemyStatsMap = EnemyStatsData->EnemyStatsBaseMap;
+			
+		}
+	}
+}
+#endif 
+
+float UEnemyStatsComponent::GetCurrentStat(EEnemyStatType Stat)
+{
+	float EnemyCurrentStat = 0.0f;
+	CurrentEnemyLevel = CurrentEnemyLevel <= 0 ? 1 : CurrentEnemyLevel;
+	if(CurrentEnemyStatsMap.Contains(Stat))
+	{
+		float CurrentState = CurrentEnemyStatsMap[Stat].Value;
+		float StatIncrementByLevel = CurrentEnemyStatsMap[Stat].LevelIncrement;
+		EnemyCurrentStat = (CurrentState + (StatIncrementByLevel*(CurrentEnemyLevel - 1)));
+	}
+	else
+	{
+		FString StatName = UEnum::GetValueAsString(Stat);
+		FString ErrorMessage = FString::Printf(TEXT("Error: No se pudo encontrar el stat solicitado: %s"), *StatName);
+
+		// Imprimir error en pantalla
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, ErrorMessage);
+	}
+	return EnemyCurrentStat;
+}
+
+float UEnemyStatsComponent::GetCurrentStatWithSkill(EEnemyStatType Stat, float SkillVariable)
+{
+	float EnemyCurrentStatWithSkill = 0.0f;
+	CurrentEnemyLevel = CurrentEnemyLevel <= 0 ? 1 : CurrentEnemyLevel;
+	if(CurrentEnemyStatsMap.Contains(Stat))
+	{
+		float CurrentState = CurrentEnemyStatsMap[Stat].Value;
+		float StatIncrementByLevel = CurrentEnemyStatsMap[Stat].LevelIncrement;
+		EnemyCurrentStatWithSkill = (CurrentState + (StatIncrementByLevel*(CurrentEnemyLevel - 1))) * SkillVariable;
+	}
+	else
+	{
+		FString StatName = UEnum::GetValueAsString(Stat);
+		FString ErrorMessage = FString::Printf(TEXT("Error: No se pudo encontrar el stat solicitado: %s"), *StatName);
+
+		// Imprimir error en pantalla
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, ErrorMessage);
+	}
+	return EnemyCurrentStatWithSkill;
+}
+

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "EnemyStatsData.h"
 #include "Components/ActorComponent.h"
 #include "EnemyStatsComponent.generated.h"
 
@@ -29,9 +30,24 @@ protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Stats configuration")
 	EEnemy EnemyName;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Stats configuration")
+	UEnemyStatsData* EnemyStatsData;
+
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Stats configuration")
+	TMap<EEnemyStatType, FEnemyStat> CurrentEnemyStatsMap;
+
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Stats configuration")
+	int CurrentEnemyLevel;
+
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 
+	UFUNCTION(BlueprintCallable)
+	float GetCurrentStat(EEnemyStatType Stat);
+
+	UFUNCTION(BlueprintCallable)
+	float GetCurrentStatWithSkill(EEnemyStatType Stat, float SkillVariable);
 		
 };
