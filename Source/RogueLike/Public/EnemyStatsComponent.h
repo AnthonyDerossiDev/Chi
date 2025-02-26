@@ -48,6 +48,9 @@ public:
 	float GetCurrentStat(EEnemyStatType Stat);
 
 	UFUNCTION(BlueprintCallable)
+	void AlterStatDirectly(EEnemyStatType Stat, float OverrideValue);
+
+	UFUNCTION(BlueprintCallable)
 	float GetCurrentStatWithSkill(EEnemyStatType Stat, float SkillVariable);
 		
 };

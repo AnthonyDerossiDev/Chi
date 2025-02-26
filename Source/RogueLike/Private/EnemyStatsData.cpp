@@ -9,38 +9,39 @@ UEnemyStatsData::UEnemyStatsData()
     TMap<EEnemyStatType, FEnemyStat> DefaultStats;
 
     // Crear e inicializar FEnemyStat para cada tipo de estadística
-    DefaultStats.Add(EEnemyStatType::BaseHealth, FEnemyStat{100.f, 1.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::MaxHealth, FEnemyStat{100.f, 1.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::CurrentHealth, FEnemyStat{100.f, 1.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::TemporaryHealth, FEnemyStat{0.f, 0.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::MovementSpeed, FEnemyStat{600.f, 10.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::Attack, FEnemyStat{10.f, 1.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::AttackSpeed, FEnemyStat{1.f, 0.1f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::ProjectileSpeed, FEnemyStat{500.f, 5.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::Defense, FEnemyStat{5.f, 1.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::CriticalChance, FEnemyStat{0.1f, 0.01f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::CriticalDamage, FEnemyStat{1.5f, 0.1f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::RangedRange, FEnemyStat{1000.f, 50.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::Spread, FEnemyStat{0.1f, 0.01f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::Accuracy, FEnemyStat{0.9f, 0.05f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::AOESize, FEnemyStat{200.f, 10.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::AOEDamage, FEnemyStat{50.f, 5.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::Delay, FEnemyStat{0.2f, 0.02f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::Lifesteal, FEnemyStat{0.05f, 0.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::InvulnerableFrames, FEnemyStat{0.f, 0.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::TrueDamage, FEnemyStat{10.f, 1.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::DOTMultiplier, FEnemyStat{1.f, 0.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::DOTDuration, FEnemyStat{5.f, 0.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::DOTTick, FEnemyStat{1.f, 0.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::Cooldown, FEnemyStat{1.f, 0.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::StunChance, FEnemyStat{0.1f, 0.01f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::StunDuration, FEnemyStat{2.f, 0.1f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::KnockbackChance, FEnemyStat{0.1f, 0.01f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::KnockbackDistance, FEnemyStat{200.f, 10.f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::OnHitEffectChance, FEnemyStat{0.2f, 0.02f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::OnTakingDamageEffectChance, FEnemyStat{0.2f, 0.02f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::CharacterSize, FEnemyStat{1.f, 0.1f, 0.f, 1.f, 1.f});
-    DefaultStats.Add(EEnemyStatType::ReactionInterval, FEnemyStat{1.f, 0.1f, 0.f, 1.f, 1.f});
-
+	DefaultStats.Add(EEnemyStatType::BaseHealth, FEnemyStat{100.f, 1.f});
+	DefaultStats.Add(EEnemyStatType::MaxHealth, FEnemyStat{100.f, 1.f});
+	DefaultStats.Add(EEnemyStatType::CurrentHealth, FEnemyStat{100.f, 1.f});
+	DefaultStats.Add(EEnemyStatType::TemporaryHealth, FEnemyStat{0.f, 0.f});
+	DefaultStats.Add(EEnemyStatType::MovementSpeed, FEnemyStat{600.f, 10.f});
+	DefaultStats.Add(EEnemyStatType::Attack, FEnemyStat{10.f, 1.f});
+	DefaultStats.Add(EEnemyStatType::AttackSpeed, FEnemyStat{1.f, 0.1f});
+	DefaultStats.Add(EEnemyStatType::ProjectileSpeed, FEnemyStat{500.f, 5.f});
+	DefaultStats.Add(EEnemyStatType::Defense, FEnemyStat{5.f, 1.f});
+	DefaultStats.Add(EEnemyStatType::CriticalChance, FEnemyStat{0.1f, 0.01f});
+	DefaultStats.Add(EEnemyStatType::CriticalDamage, FEnemyStat{1.5f, 0.1f});
+	DefaultStats.Add(EEnemyStatType::RangedRange, FEnemyStat{1000.f, 50.f});
+	DefaultStats.Add(EEnemyStatType::Spread, FEnemyStat{0.1f, 0.01f});
+	DefaultStats.Add(EEnemyStatType::Accuracy, FEnemyStat{0.9f, 0.05f});
+	DefaultStats.Add(EEnemyStatType::AOESize, FEnemyStat{200.f, 10.f});
+	DefaultStats.Add(EEnemyStatType::AOEDamage, FEnemyStat{50.f, 5.f});
+	DefaultStats.Add(EEnemyStatType::Delay, FEnemyStat{0.2f, 0.02f});
+	DefaultStats.Add(EEnemyStatType::Lifesteal, FEnemyStat{0.05f, 0.f});
+	DefaultStats.Add(EEnemyStatType::InvulnerableFrames, FEnemyStat{0.f, 0.f});
+	DefaultStats.Add(EEnemyStatType::TrueDamage, FEnemyStat{10.f, 1.f});
+	DefaultStats.Add(EEnemyStatType::DOTMultiplier, FEnemyStat{1.f, 0.f});
+	DefaultStats.Add(EEnemyStatType::DOTDuration, FEnemyStat{5.f, 0.f});
+	DefaultStats.Add(EEnemyStatType::DOTTick, FEnemyStat{1.f, 0.f});
+	DefaultStats.Add(EEnemyStatType::Cooldown, FEnemyStat{1.f, 0.f});
+	DefaultStats.Add(EEnemyStatType::StunChance, FEnemyStat{0.1f, 0.01f});
+	DefaultStats.Add(EEnemyStatType::StunDuration, FEnemyStat{2.f, 0.1f});
+	DefaultStats.Add(EEnemyStatType::KnockbackChance, FEnemyStat{0.1f, 0.01f});
+	DefaultStats.Add(EEnemyStatType::KnockbackDistance, FEnemyStat{200.f, 10.f});
+	DefaultStats.Add(EEnemyStatType::OnHitEffectChance, FEnemyStat{0.2f, 0.02f});
+	DefaultStats.Add(EEnemyStatType::OnTakingDamageEffectChance, FEnemyStat{0.2f, 0.02f});
+	DefaultStats.Add(EEnemyStatType::CharacterSize, FEnemyStat{1.f, 0.1f});
+	DefaultStats.Add(EEnemyStatType::ReactionInterval, FEnemyStat{1.f, 0.1f});
+	
 	EnemyStatsBaseMap = DefaultStats;
+	
 }

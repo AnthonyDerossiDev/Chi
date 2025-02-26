@@ -19,7 +19,8 @@ void UEnemyStatsComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
+	float MaxHealth = GetCurrentStat(EEnemyStatType::MaxHealth);
+	AlterStatDirectly(EEnemyStatType::CurrentHealth, MaxHealth);
 	
 }
 
@@ -67,6 +68,22 @@ float UEnemyStatsComponent::GetCurrentStat(EEnemyStatType Stat)
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, ErrorMessage);
 	}
 	return EnemyCurrentStat;
+}
+
+void UEnemyStatsComponent::AlterStatDirectly(EEnemyStatType Stat, float OverrideValue)
+{
+	if(CurrentEnemyStatsMap.Contains(Stat))
+	{
+		CurrentEnemyStatsMap[Stat].Value = OverrideValue;
+	}
+	else
+	{
+		FString StatName = UEnum::GetValueAsString(Stat);
+		FString ErrorMessage = FString::Printf(TEXT("Error: No se pudo encontrar el stat solicitado: %s"), *StatName);
+
+		// Imprimir error en pantalla
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, ErrorMessage);
+	}
 }
 
 float UEnemyStatsComponent::GetCurrentStatWithSkill(EEnemyStatType Stat, float SkillVariable)
