@@ -73,9 +73,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	float GetCurrentStatWithSkill(ECharacterStatType Stat, float SkillVariable);
 
+	// Devuelve el stat del jugador teniendo en cuenta los objetos que lo modifiquen
 	UFUNCTION(BlueprintCallable)
 	float GetFinalStat(ECharacterStatType Stat);
 
+	// Devuelve el stat del jugador teniendo en cuenta los objetos que lo modifiquen y además usa una variación dependiendo de la habilidad
 	UFUNCTION(BlueprintCallable)
 	float GetFinalStatWithSkill(ECharacterStatType Stat, float SkillVariable);
 };

@@ -13,8 +13,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b3a75051-9c2b-4f68-ae54-a910a4eb4eb7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Developers/Anthony/Settings/W_SettingsMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Developers/Anthony/Settings/W_SettingsMenu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/GameData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Public/GameData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Enemies/BP_BaseEnemy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Enemies/BP_BaseEnemy.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/BP_CombatCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/BP_CombatCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/UI/Tutorials/W_ItemDataOnScreen.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/UI/Tutorials/W_ItemDataOnScreen.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/UI/W_Inventory.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/UI/W_Inventory.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Private/EnemyStatsComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Private/EnemyStatsComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/CharacterStatsComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Public/CharacterStatsComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/EnemyStatsComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Public/EnemyStatsComponent.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -513,6 +518,7 @@
       <workItem from="1739989075573" duration="8789000" />
       <workItem from="1740179025975" duration="9741000" />
       <workItem from="1740414028350" duration="5600000" />
+      <workItem from="1740584098659" duration="4292000" />
     </task>
     <servers />
   </component>
