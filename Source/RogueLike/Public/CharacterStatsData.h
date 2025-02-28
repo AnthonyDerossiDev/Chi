@@ -70,6 +70,9 @@ struct FStat
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float BaseValue;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float Value;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

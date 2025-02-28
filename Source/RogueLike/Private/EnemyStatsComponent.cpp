@@ -55,9 +55,9 @@ float UEnemyStatsComponent::GetCurrentStat(EEnemyStatType Stat)
 	CurrentEnemyLevel = CurrentEnemyLevel <= 0 ? 1 : CurrentEnemyLevel;
 	if(CurrentEnemyStatsMap.Contains(Stat))
 	{
-		float CurrentState = CurrentEnemyStatsMap[Stat].Value;
+		float BaseStat = CurrentEnemyStatsMap[Stat].BaseValue;
 		float StatIncrementByLevel = CurrentEnemyStatsMap[Stat].LevelIncrement;
-		EnemyCurrentStat = (CurrentState + (StatIncrementByLevel*(CurrentEnemyLevel - 1)));
+		EnemyCurrentStat = (BaseStat + (StatIncrementByLevel*(CurrentEnemyLevel - 1)));
 	}
 	else
 	{
@@ -92,9 +92,9 @@ float UEnemyStatsComponent::GetCurrentStatWithSkill(EEnemyStatType Stat, float S
 	CurrentEnemyLevel = CurrentEnemyLevel <= 0 ? 1 : CurrentEnemyLevel;
 	if(CurrentEnemyStatsMap.Contains(Stat))
 	{
-		float CurrentState = CurrentEnemyStatsMap[Stat].Value;
+		float BaseStat = CurrentEnemyStatsMap[Stat].BaseValue;
 		float StatIncrementByLevel = CurrentEnemyStatsMap[Stat].LevelIncrement;
-		EnemyCurrentStatWithSkill = (CurrentState + (StatIncrementByLevel*(CurrentEnemyLevel - 1))) * SkillVariable;
+		EnemyCurrentStatWithSkill = (BaseStat + (StatIncrementByLevel*(CurrentEnemyLevel - 1))) * SkillVariable;
 	}
 	else
 	{
