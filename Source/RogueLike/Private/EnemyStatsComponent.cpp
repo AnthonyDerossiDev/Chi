@@ -19,9 +19,12 @@ void UEnemyStatsComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	float MaxHealth = GetCurrentStat(EEnemyStatType::MaxHealth);
-	AlterStatDirectly(EEnemyStatType::CurrentHealth, MaxHealth);
+	if (EnemyStatsData == nullptr) return;
 	
+	CurrentEnemyStatsMap = EnemyStatsData->EnemyStatsBaseMap;
+
+	MaxHealth = GetCurrentStat(EEnemyStatType::BaseHealth, EEnemyStatType::None);
+	CurrentHealth = GetCurrentStat(EEnemyStatType::BaseHealth, EEnemyStatType::None);
 }
 
 
@@ -43,18 +46,21 @@ void UEnemyStatsComponent::PostEditChangeProperty(FPropertyChangedEvent& Propert
 		if (EnemyStatsData != nullptr)
 		{
 			CurrentEnemyStatsMap = EnemyStatsData->EnemyStatsBaseMap;
-			
 		}
 	}
 }
 #endif 
 
-float UEnemyStatsComponent::GetCurrentStat(EEnemyStatType Stat)
+float UEnemyStatsComponent::GetCurrentStat(EEnemyStatType Stat, EEnemyStatType ReferenceStat)
 {
 	float EnemyCurrentStat = 0.0f;
 	CurrentEnemyLevel = CurrentEnemyLevel <= 0 ? 1 : CurrentEnemyLevel;
 	if(CurrentEnemyStatsMap.Contains(Stat))
 	{
+		if(ReferenceStat != EEnemyStatType::None)
+		{
+			Stat = ReferenceStat;
+		}
 		float BaseStat = CurrentEnemyStatsMap[Stat].BaseValue;
 		float StatIncrementByLevel = CurrentEnemyStatsMap[Stat].LevelIncrement;
 		EnemyCurrentStat = (BaseStat + (StatIncrementByLevel*(CurrentEnemyLevel - 1)));
@@ -105,5 +111,5 @@ float UEnemyStatsComponent::GetCurrentStatWithSkill(EEnemyStatType Stat, float S
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, ErrorMessage);
 	}
 	return EnemyCurrentStatWithSkill;
+	
 }
-
