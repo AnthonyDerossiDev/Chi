@@ -23,8 +23,8 @@ void UEnemyStatsComponent::BeginPlay()
 	
 	CurrentEnemyStatsMap = EnemyStatsData->EnemyStatsBaseMap;
 
-	MaxHealth = GetCurrentStat(EEnemyStatType::BaseHealth, EEnemyStatType::None);
-	CurrentHealth = GetCurrentStat(EEnemyStatType::BaseHealth, EEnemyStatType::None);
+	MaxHealth = GetCurrentStat(EEnemyStatType::BaseHealth);
+	CurrentHealth = GetCurrentStat(EEnemyStatType::BaseHealth);
 }
 
 
@@ -51,16 +51,12 @@ void UEnemyStatsComponent::PostEditChangeProperty(FPropertyChangedEvent& Propert
 }
 #endif 
 
-float UEnemyStatsComponent::GetCurrentStat(EEnemyStatType Stat, EEnemyStatType ReferenceStat)
+float UEnemyStatsComponent::GetCurrentStat(EEnemyStatType Stat)
 {
 	float EnemyCurrentStat = 0.0f;
 	CurrentEnemyLevel = CurrentEnemyLevel <= 0 ? 1 : CurrentEnemyLevel;
 	if(CurrentEnemyStatsMap.Contains(Stat))
 	{
-		if(ReferenceStat != EEnemyStatType::None)
-		{
-			Stat = ReferenceStat;
-		}
 		float BaseStat = CurrentEnemyStatsMap[Stat].BaseValue;
 		float StatIncrementByLevel = CurrentEnemyStatsMap[Stat].LevelIncrement;
 		EnemyCurrentStat = (BaseStat + (StatIncrementByLevel*(CurrentEnemyLevel - 1)));
