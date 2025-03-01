@@ -67,7 +67,7 @@ public:
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 
 	UFUNCTION(BlueprintCallable)
-	void AddStatData(ECharacterStatType Stat, float AdditiveDelta, float MultiplicativeDelta, float DivisorDelta);
+	void AddStatData(ECharacterStatType Stat, float AdditiveDelta, float MultiplicativeDelta, float DivisorDelta, float MaxStack);
 
 	UFUNCTION(BlueprintCallable)
 	float GetCurrentStat(ECharacterStatType Stat);
