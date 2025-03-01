@@ -86,6 +86,7 @@ void UCharacterStatsComponent::AddStatData(ECharacterStatType Stat, float Additi
 
 		// Imprimir el mensaje detallado en la pantalla
 		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green, LogMessage);
+		OnUpdateStats.Broadcast();
 	}
 	else
 	{
