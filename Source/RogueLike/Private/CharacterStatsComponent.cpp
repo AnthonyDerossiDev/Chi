@@ -103,9 +103,9 @@ float UCharacterStatsComponent::GetCurrentStat(ECharacterStatType Stat)
 	CurrentPlayerLevel = CurrentPlayerLevel <= 0 ? 1 : CurrentPlayerLevel;
 	if(CurrentPlayerStatsMap.Contains(Stat))
 	{
-		float CurrentState = CurrentPlayerStatsMap[Stat].Value;
+		float BaseStat = CurrentPlayerStatsMap[Stat].BaseValue;
 		float StatIncrementByLevel = CurrentPlayerStatsMap[Stat].LevelIncrement;
-		FinalStatWithNoObjects = (CurrentState + (StatIncrementByLevel*(CurrentPlayerLevel - 1)));
+		FinalStatWithNoObjects = (BaseStat + (StatIncrementByLevel*(CurrentPlayerLevel - 1)));
 	}
 	else
 	{
@@ -124,9 +124,9 @@ float UCharacterStatsComponent::GetCurrentStatWithSkill(ECharacterStatType Stat,
 	CurrentPlayerLevel = CurrentPlayerLevel <= 0 ? 1 : CurrentPlayerLevel;
 	if(CurrentPlayerStatsMap.Contains(Stat))
 	{
-		float CurrentState = CurrentPlayerStatsMap[Stat].Value;
+		float BaseStat = CurrentPlayerStatsMap[Stat].BaseValue;
 		float StatIncrementByLevel = CurrentPlayerStatsMap[Stat].LevelIncrement;
-		FinalStatWithNoObjects = (CurrentState + (StatIncrementByLevel*(CurrentPlayerLevel - 1))) * SkillVariable;
+		FinalStatWithNoObjects = (BaseStat + (StatIncrementByLevel*(CurrentPlayerLevel - 1))) * SkillVariable;
 	}
 	else
 	{
@@ -148,8 +148,13 @@ float UCharacterStatsComponent::GetFinalStat(ECharacterStatType Stat)
 	
 		float CurrentStatValue = GetCurrentStat(Stat);
 		float AdditiveValues = SelectedStat.CurrentAdditiveValues;
+
 		float MultiplicativeValues = SelectedStat.CurrentMultiplicativeValues;
+		MultiplicativeValues = MultiplicativeValues <= 0 ? 1 : MultiplicativeValues;
+		
 		float DivisorValues = SelectedStat.CurrentDivisorValues;
+		DivisorValues = DivisorValues <= 0 ? 1 : DivisorValues;
+
 		FinalStatValue = CurrentStatValue * (MultiplicativeValues/DivisorValues) + AdditiveValues;
 
 	}
