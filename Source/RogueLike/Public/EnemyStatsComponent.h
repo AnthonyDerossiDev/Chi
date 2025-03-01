@@ -45,7 +45,7 @@ public:
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 
 	UFUNCTION(BlueprintCallable)
-	float GetCurrentStat(EEnemyStatType Stat, EEnemyStatType ReferenceStat);
+	float GetCurrentStat(EEnemyStatType Stat);
 
 	UFUNCTION(BlueprintCallable)
 	void AlterStatDirectly(EEnemyStatType Stat, float OverrideValue);
