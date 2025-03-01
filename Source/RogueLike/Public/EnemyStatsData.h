@@ -9,11 +9,10 @@
 UENUM(BlueprintType)
 enum class EEnemyStatType : uint8
 {
+	None,
+	
     // Health Stats
     BaseHealth           UMETA(DisplayName = "Base Health"),
-    MaxHealth            UMETA(DisplayName = "Max Health"),
-    CurrentHealth        UMETA(DisplayName = "Current Health"),
-    TemporaryHealth      UMETA(DisplayName = "Temporary Health"),
 
     // Movement Stats
     MovementSpeed        UMETA(DisplayName = "Movement Speed"),

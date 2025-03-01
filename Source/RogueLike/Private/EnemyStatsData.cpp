@@ -10,9 +10,6 @@ UEnemyStatsData::UEnemyStatsData()
 
     // Crear e inicializar FEnemyStat para cada tipo de estadística
 	DefaultStats.Add(EEnemyStatType::BaseHealth, FEnemyStat{100.f, 100.f, 1.2f});
-	DefaultStats.Add(EEnemyStatType::MaxHealth, FEnemyStat{100.f, 100.f, 1.2f});
-	DefaultStats.Add(EEnemyStatType::CurrentHealth, FEnemyStat{100.f, 100.f, 1.2f});
-	DefaultStats.Add(EEnemyStatType::TemporaryHealth, FEnemyStat{0.f, 0.f, 1.2f});
 	DefaultStats.Add(EEnemyStatType::MovementSpeed, FEnemyStat{600.f, 600.f, 1.2f});
 	DefaultStats.Add(EEnemyStatType::Attack, FEnemyStat{10.f, 10.f, 1.2f});
 	DefaultStats.Add(EEnemyStatType::AttackSpeed, FEnemyStat{1.f, 1.f, 1.2f});
