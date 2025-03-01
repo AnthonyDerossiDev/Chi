@@ -66,7 +66,7 @@ void UCharacterStatsComponent::PostEditChangeProperty(FPropertyChangedEvent& Pro
 }
 #endif
 
-void UCharacterStatsComponent::AddStatData(ECharacterStatType Stat, float AdditiveDelta, float MultiplicativeDelta, float DivisorDelta)
+void UCharacterStatsComponent::AddStatData(ECharacterStatType Stat, float AdditiveDelta, float MultiplicativeDelta, float DivisorDelta, float MaxStack)
 {
 	if (CurrentPlayerStatsMap.Contains(Stat))
 	{
@@ -74,15 +74,30 @@ void UCharacterStatsComponent::AddStatData(ECharacterStatType Stat, float Additi
 		FString StatName = UEnum::GetValueAsString(Stat);
 		FString LogMessage = FString::Printf(TEXT("Modificando stat: %s"), *StatName);
 
-		// Imprimir cambios detallados
-		LogMessage += FString::Printf(TEXT("\n- AdditiveDelta: %f -> %f"), CurrentPlayerStatsMap[Stat].CurrentAdditiveValues, CurrentPlayerStatsMap[Stat].CurrentAdditiveValues + AdditiveDelta);
-		LogMessage += FString::Printf(TEXT("\n- MultiplicativeDelta: %f -> %f"), CurrentPlayerStatsMap[Stat].CurrentMultiplicativeValues, CurrentPlayerStatsMap[Stat].CurrentMultiplicativeValues + MultiplicativeDelta);
-		LogMessage += FString::Printf(TEXT("\n- DivisorDelta: %f -> %f"), CurrentPlayerStatsMap[Stat].CurrentDivisorValues, CurrentPlayerStatsMap[Stat].CurrentDivisorValues + DivisorDelta);
+		// Referencias a los valores actuales
+		FStat& StatData = CurrentPlayerStatsMap[Stat];
 
-		// Actualizar valores
-		CurrentPlayerStatsMap[Stat].CurrentAdditiveValues += AdditiveDelta;
-		CurrentPlayerStatsMap[Stat].CurrentMultiplicativeValues += MultiplicativeDelta;
-		CurrentPlayerStatsMap[Stat].CurrentDivisorValues += DivisorDelta;
+		// Aplicar cambios con límite de MaxStack, básicamente lo que hace es comprobar que si MaxStack es menor que 0,
+		// se cogerá la suma directa sin clamp no habiendo límite, en caso de ser mayor que 0, se da por hecho que
+		// hay que limitar los CurrentValues y se utiliza la segunda opción (FMath::Min).
+		float NewAdditiveValue = (MaxStack <= 0) ? (StatData.CurrentAdditiveValues + AdditiveDelta) 
+		: FMath::Min(StatData.CurrentAdditiveValues + AdditiveDelta, MaxStack);
+
+		float NewMultiplicativeValue = (MaxStack <= 0) ? (StatData.CurrentMultiplicativeValues + MultiplicativeDelta) 
+		: FMath::Min(StatData.CurrentMultiplicativeValues + MultiplicativeDelta, MaxStack);
+
+		float NewDivisorValue = (MaxStack <= 0) ? (StatData.CurrentDivisorValues + DivisorDelta) 
+		: FMath::Min(StatData.CurrentDivisorValues + DivisorDelta, MaxStack);
+
+		// Imprimir cambios detallados
+		LogMessage += FString::Printf(TEXT("\n- AdditiveDelta: %f -> %f"), StatData.CurrentAdditiveValues, NewAdditiveValue);
+		LogMessage += FString::Printf(TEXT("\n- MultiplicativeDelta: %f -> %f"), StatData.CurrentMultiplicativeValues, NewMultiplicativeValue);
+		LogMessage += FString::Printf(TEXT("\n- DivisorDelta: %f -> %f"), StatData.CurrentDivisorValues, NewDivisorValue);
+
+		// Asignar valores limitados
+		StatData.CurrentAdditiveValues = NewAdditiveValue;
+		StatData.CurrentMultiplicativeValues = NewMultiplicativeValue;
+		StatData.CurrentDivisorValues = NewDivisorValue;
 
 		// Imprimir el mensaje detallado en la pantalla
 		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green, LogMessage);
@@ -97,6 +112,7 @@ void UCharacterStatsComponent::AddStatData(ECharacterStatType Stat, float Additi
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, ErrorMessage);
 	}
 }
+
 
 float UCharacterStatsComponent::GetCurrentStat(ECharacterStatType Stat)
 {
