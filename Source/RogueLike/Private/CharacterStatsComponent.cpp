@@ -80,14 +80,9 @@ void UCharacterStatsComponent::AddStatData(ECharacterStatType Stat, float Additi
 		// Aplicar cambios con límite de MaxStack, básicamente lo que hace es comprobar que si MaxStack es menor que 0,
 		// se cogerá la suma directa sin clamp no habiendo límite, en caso de ser mayor que 0, se da por hecho que
 		// hay que limitar los CurrentValues y se utiliza la segunda opción (FMath::Min).
-		float NewAdditiveValue = (MaxStack <= 0) ? (StatData.CurrentAdditiveValues + AdditiveDelta) 
-		: FMath::Min(StatData.CurrentAdditiveValues + AdditiveDelta, MaxStack);
-
-		float NewMultiplicativeValue = (MaxStack <= 0) ? (StatData.CurrentMultiplicativeValues + MultiplicativeDelta) 
-		: FMath::Min(StatData.CurrentMultiplicativeValues + MultiplicativeDelta, MaxStack);
-
-		float NewDivisorValue = (MaxStack <= 0) ? (StatData.CurrentDivisorValues + DivisorDelta) 
-		: FMath::Min(StatData.CurrentDivisorValues + DivisorDelta, MaxStack);
+		float NewAdditiveValue = (MaxStack <= 0) ? (StatData.CurrentAdditiveValues + AdditiveDelta) : FMath::Min(StatData.CurrentAdditiveValues + AdditiveDelta, MaxStack);
+		float NewMultiplicativeValue = (MaxStack <= 0) ? (StatData.CurrentMultiplicativeValues + MultiplicativeDelta) : FMath::Min(StatData.CurrentMultiplicativeValues + MultiplicativeDelta, MaxStack);
+		float NewDivisorValue = (MaxStack <= 0) ? (StatData.CurrentDivisorValues + DivisorDelta) : FMath::Min(StatData.CurrentDivisorValues + DivisorDelta, MaxStack);
 
 		// Imprimir cambios detallados
 		LogMessage += FString::Printf(TEXT("\n- AdditiveDelta: %f -> %f"), StatData.CurrentAdditiveValues, NewAdditiveValue);
