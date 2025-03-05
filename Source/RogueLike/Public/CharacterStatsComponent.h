@@ -27,6 +27,8 @@
 #include "Components/ActorComponent.h"
 #include "CharacterStatsComponent.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnUpdateStats);
+
 UENUM(BlueprintType)
 enum class ECharacter : uint8
 {
@@ -65,7 +67,7 @@ public:
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 
 	UFUNCTION(BlueprintCallable)
-	void AddStatData(ECharacterStatType Stat, float AdditiveDelta, float MultiplicativeDelta, float DivisorDelta);
+	void AddStatData(ECharacterStatType Stat, float AdditiveDelta, float MultiplicativeDelta, float DivisorDelta, float MaxStack);
 
 	UFUNCTION(BlueprintCallable)
 	float GetCurrentStat(ECharacterStatType Stat);
@@ -80,4 +82,8 @@ public:
 	// Devuelve el stat del jugador teniendo en cuenta los objetos que lo modifiquen y además usa una variación dependiendo de la habilidad
 	UFUNCTION(BlueprintCallable)
 	float GetFinalStatWithSkill(ECharacterStatType Stat, float SkillVariable);
+
+	UPROPERTY(BlueprintCallable, BlueprintAssignable)
+	FOnUpdateStats OnUpdateStats;
+	
 };

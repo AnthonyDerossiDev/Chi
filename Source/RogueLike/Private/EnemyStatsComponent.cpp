@@ -19,9 +19,12 @@ void UEnemyStatsComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	float MaxHealth = GetCurrentStat(EEnemyStatType::MaxHealth);
-	AlterStatDirectly(EEnemyStatType::CurrentHealth, MaxHealth);
+	if (EnemyStatsData == nullptr) return;
 	
+	CurrentEnemyStatsMap = EnemyStatsData->EnemyStatsBaseMap;
+
+	MaxHealth = GetCurrentStat(EEnemyStatType::BaseHealth);
+	CurrentHealth = GetCurrentStat(EEnemyStatType::BaseHealth);
 }
 
 
@@ -43,7 +46,6 @@ void UEnemyStatsComponent::PostEditChangeProperty(FPropertyChangedEvent& Propert
 		if (EnemyStatsData != nullptr)
 		{
 			CurrentEnemyStatsMap = EnemyStatsData->EnemyStatsBaseMap;
-			
 		}
 	}
 }
@@ -55,9 +57,9 @@ float UEnemyStatsComponent::GetCurrentStat(EEnemyStatType Stat)
 	CurrentEnemyLevel = CurrentEnemyLevel <= 0 ? 1 : CurrentEnemyLevel;
 	if(CurrentEnemyStatsMap.Contains(Stat))
 	{
-		float CurrentState = CurrentEnemyStatsMap[Stat].Value;
+		float BaseStat = CurrentEnemyStatsMap[Stat].BaseValue;
 		float StatIncrementByLevel = CurrentEnemyStatsMap[Stat].LevelIncrement;
-		EnemyCurrentStat = (CurrentState + (StatIncrementByLevel*(CurrentEnemyLevel - 1)));
+		EnemyCurrentStat = (BaseStat + (StatIncrementByLevel*(CurrentEnemyLevel - 1)));
 	}
 	else
 	{
@@ -92,9 +94,9 @@ float UEnemyStatsComponent::GetCurrentStatWithSkill(EEnemyStatType Stat, float S
 	CurrentEnemyLevel = CurrentEnemyLevel <= 0 ? 1 : CurrentEnemyLevel;
 	if(CurrentEnemyStatsMap.Contains(Stat))
 	{
-		float CurrentState = CurrentEnemyStatsMap[Stat].Value;
+		float BaseStat = CurrentEnemyStatsMap[Stat].BaseValue;
 		float StatIncrementByLevel = CurrentEnemyStatsMap[Stat].LevelIncrement;
-		EnemyCurrentStatWithSkill = (CurrentState + (StatIncrementByLevel*(CurrentEnemyLevel - 1))) * SkillVariable;
+		EnemyCurrentStatWithSkill = (BaseStat + (StatIncrementByLevel*(CurrentEnemyLevel - 1))) * SkillVariable;
 	}
 	else
 	{
@@ -105,5 +107,5 @@ float UEnemyStatsComponent::GetCurrentStatWithSkill(EEnemyStatType Stat, float S
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, ErrorMessage);
 	}
 	return EnemyCurrentStatWithSkill;
+	
 }
-

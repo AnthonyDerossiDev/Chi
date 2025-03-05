@@ -52,5 +52,14 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	float GetCurrentStatWithSkill(EEnemyStatType Stat, float SkillVariable);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health Stats")
+	float MaxHealth = 100.f;  
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health Stats")
+	float CurrentHealth = 100.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health Stats")
+	float TemporaryHealth = 0.f;
 		
 };
