@@ -12,7 +12,8 @@ UCharacterStatsData::UCharacterStatsData()
 	DefaultStats.Add(ECharacterStatType::BaseHealth, FStat{100.f, 100.f, 1.2f, 0.0f, 1.0f, 1.0f});
 	DefaultStats.Add(ECharacterStatType::MaxHealth, FStat{100.f, 100.f, 1.2f, 0.0f, 1.0f, 1.0f});
 	DefaultStats.Add(ECharacterStatType::CurrentHealth, FStat{100.f, 100.f, 1.2f, 0.0f, 1.0f, 1.0f});
-	DefaultStats.Add(ECharacterStatType::TemporaryHealth, FStat{0.f, 0.f, 1.2f, 0.0f, 1.0f, 1.0f});
+	DefaultStats.Add(ECharacterStatType::CurrentTemporaryHealth, FStat{0.f, 0.f, 0.f, 0.0f, 1.0f, 1.0f});
+	DefaultStats.Add(ECharacterStatType::MaxTemporaryHealth, FStat{0.f, 0.f, 0.f, 0.0f, 1.0f, 1.0f});
 	DefaultStats.Add(ECharacterStatType::MovementSpeed, FStat{600.f, 600.f, 1.2f, 0.0f, 1.0f, 1.0f});
 	DefaultStats.Add(ECharacterStatType::Attack, FStat{10.f, 10.f, 1.2f, 0.0f, 1.0f, 1.0f});
 	DefaultStats.Add(ECharacterStatType::AttackSpeed, FStat{1.f, 1.f, 1.2f, 0.0f, 1.0f, 1.0f});

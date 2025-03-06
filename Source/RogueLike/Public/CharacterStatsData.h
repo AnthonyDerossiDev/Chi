@@ -13,7 +13,8 @@ enum class ECharacterStatType : uint8
     BaseHealth           UMETA(DisplayName = "Base Health"),
     MaxHealth            UMETA(DisplayName = "Max Health"),
     CurrentHealth        UMETA(DisplayName = "Current Health"),
-    TemporaryHealth      UMETA(DisplayName = "Temporary Health"),
+    CurrentTemporaryHealth      UMETA(DisplayName = "Current Temporary Health"),
+    MaxTemporaryHealth      UMETA(DisplayName = "Max Temporary Health"),
 
     // Movement Stats
     MovementSpeed        UMETA(DisplayName = "Movement Speed"),
