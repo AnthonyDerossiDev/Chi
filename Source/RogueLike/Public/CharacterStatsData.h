@@ -29,6 +29,7 @@ enum class ECharacterStatType : uint8
     RangedRange          UMETA(DisplayName = "Ranged Range"),
     Spread               UMETA(DisplayName = "Spread"),
     Accuracy             UMETA(DisplayName = "Accuracy"),
+    Dodge             UMETA(DisplayName = "Dodge"),
 
     // Miscellaneous Combat Stats
     AOESize              UMETA(DisplayName = "AOE Size"),

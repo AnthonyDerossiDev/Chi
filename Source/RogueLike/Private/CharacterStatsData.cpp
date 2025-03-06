@@ -24,6 +24,7 @@ UCharacterStatsData::UCharacterStatsData()
 	DefaultStats.Add(ECharacterStatType::RangedRange, FStat{1000.f, 1000.f, 1.2f, 0.0f, 1.0f, 1.0f});
 	DefaultStats.Add(ECharacterStatType::Spread, FStat{0.1f, 0.1f, 1.2f, 0.0f, 1.0f, 1.0f});
 	DefaultStats.Add(ECharacterStatType::Accuracy, FStat{0.9f, 0.9f, 1.2f, 0.0f, 1.0f, 1.0f});
+	DefaultStats.Add(ECharacterStatType::Dodge, FStat{0.0f, 0.0f, 1.2f, 0.0f, 1.0f, 1.0f});
 	DefaultStats.Add(ECharacterStatType::AOESize, FStat{200.f, 200.f, 1.2f, 0.0f, 1.0f, 1.0f});
 	DefaultStats.Add(ECharacterStatType::AOEDamage, FStat{50.f, 50.f, 1.2f, 0.0f, 1.0f, 1.0f});
 	DefaultStats.Add(ECharacterStatType::Delay, FStat{0.2f, 0.2f, 1.2f, 0.0f, 1.0f, 1.0f});

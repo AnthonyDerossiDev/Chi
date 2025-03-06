@@ -12,13 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3a75051-9c2b-4f68-ae54-a910a4eb4eb7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/ObjectManagers/BP_HigherCadenceHigherCritDamageManager.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_HigherCadenceHigherCritController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_HigherCadenceHigherCritController.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_HigherCadenceHigherCritDamage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/Others/BP_PUO_HigherCadenceHigherCritDamage.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Developers/Anthony/DevTestLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Developers/Anthony/DevTestLevel.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RogueLike/Private/CharacterStatsData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Private/CharacterStatsData.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/CharacterStatsComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Public/CharacterStatsComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/CharacterStatsData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Public/CharacterStatsData.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -525,6 +520,7 @@
       <workItem from="1740949987455" duration="2999000" />
       <workItem from="1741024026072" duration="328000" />
       <workItem from="1741225245503" duration="985000" />
+      <workItem from="1741293153802" duration="255000" />
     </task>
     <servers />
   </component>
