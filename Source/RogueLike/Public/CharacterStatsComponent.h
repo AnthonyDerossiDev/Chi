@@ -85,5 +85,7 @@ public:
 
 	UPROPERTY(BlueprintCallable, BlueprintAssignable)
 	FOnUpdateStats OnUpdateStats;
+
+	
 	
 };

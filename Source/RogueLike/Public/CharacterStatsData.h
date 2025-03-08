@@ -13,7 +13,8 @@ enum class ECharacterStatType : uint8
     BaseHealth           UMETA(DisplayName = "Base Health"),
     MaxHealth            UMETA(DisplayName = "Max Health"),
     CurrentHealth        UMETA(DisplayName = "Current Health"),
-    TemporaryHealth      UMETA(DisplayName = "Temporary Health"),
+    CurrentTemporaryHealth      UMETA(DisplayName = "Current Temporary Health"),
+    MaxTemporaryHealth      UMETA(DisplayName = "Max Temporary Health"),
 
     // Movement Stats
     MovementSpeed        UMETA(DisplayName = "Movement Speed"),
@@ -24,10 +25,12 @@ enum class ECharacterStatType : uint8
     ProjectileSpeed      UMETA(DisplayName = "Projectile Speed"),
     Defense              UMETA(DisplayName = "Defense"),
     CriticalChance       UMETA(DisplayName = "Critical Chance"),
-    CriticalDamage       UMETA(DisplayName = "Critical Damage"),
+    RangedCriticalDamage       UMETA(DisplayName = "Ranged Critical Damage"),
+    MeleeCriticalDamage       UMETA(DisplayName = "Melee Critical Damage"),
     RangedRange          UMETA(DisplayName = "Ranged Range"),
     Spread               UMETA(DisplayName = "Spread"),
     Accuracy             UMETA(DisplayName = "Accuracy"),
+    Dodge             UMETA(DisplayName = "Dodge"),
 
     // Miscellaneous Combat Stats
     AOESize              UMETA(DisplayName = "AOE Size"),
