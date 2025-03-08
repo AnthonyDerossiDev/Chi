@@ -12,9 +12,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3a75051-9c2b-4f68-ae54-a910a4eb4eb7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/FunctionLibraries/BPMacro_OverTimeEffects.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/OverTimeEffects/BP_DOT_Area.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/OverTimeEffects/BP_HOT_Area.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/OverTimeEffects/BP_OT_Area.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/OverTimeEffects/S_DOTConfiguration.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/OverTimeEffects/S_HOTConfiguration.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/OverTimeEffects/S_OT_DirectConfiguration.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/OverTimeEffects/S_OT_EffectAreaConfiguration.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RogueLike/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/BP_CombatCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Characters/Player/BP_CombatCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/FunctionLibraries/BPFLibrary.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/FunctionLibraries/BPFLibrary.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/ActorComponents/CharacterPickUpTracker.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/ActorComponents/CharacterPickUpTracker.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/ObjectManagers/BP_DronObjectManager.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/Interactables/PickUpObjects/ObjectManagers/BP_DronObjectManager.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/OverTimeEffects/BP_DOT.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/OverTimeEffects/BP_DOT.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/OverTimeEffects/BP_HOT.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/OverTimeEffects/BP_HOT.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/OverTimeEffects/BP_OverTimeEffect.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/Gameplay/OverTimeEffects/BP_OverTimeEffect.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/UI/Tutorials/W_ItemDataOnScreen.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/UI/Tutorials/W_ItemDataOnScreen.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/01_Blueprints/UI/W_Inventory.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/01_Blueprints/UI/W_Inventory.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Developers/Anthony/DevTestLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Developers/Anthony/DevTestLevel.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Private/CharacterStatsData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Private/CharacterStatsData.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/RogueLike/Public/CharacterStatsData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RogueLike/Public/CharacterStatsData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Developers/Anthony/GM_MultiplayerLocal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Developers/Anthony/GM_MultiplayerLocal.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Developers/Javi/BP_WeaponSystem/WP_Shotgun/BP_PoisonExplosion.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Developers/Javi/BP_WeaponSystem/WP_Shotgun/BP_PoisonExplosion.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -521,6 +539,7 @@
       <workItem from="1741024026072" duration="328000" />
       <workItem from="1741225245503" duration="985000" />
       <workItem from="1741293153802" duration="255000" />
+      <workItem from="1741456271478" duration="2883000" />
     </task>
     <servers />
   </component>
