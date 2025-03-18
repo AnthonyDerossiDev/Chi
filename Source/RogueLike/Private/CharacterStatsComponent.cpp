@@ -38,6 +38,8 @@ void UCharacterStatsComponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
+	CurrentPlayerStatsMap = CharacterBaseStatsData->PlayerStatsBaseMap;
+
 	
 }
 
