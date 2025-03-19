@@ -56,9 +56,6 @@ protected:
 
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Stats configuration")
 	TMap<ECharacterStatType, FStat> CurrentPlayerStatsMap;
-
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Data")
-	int CurrentPlayerLevel;
 	
 
 public:	
@@ -85,6 +82,24 @@ public:
 
 	UPROPERTY(BlueprintCallable, BlueprintAssignable)
 	FOnUpdateStats OnUpdateStats;
+
+	UFUNCTION(BlueprintCallable)
+	void AddPlayerExperience(float Amount);
+
+	void LevelUp();
+	void IncrementStatsByLevel();
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Experiencie")
+	int CurrentPlayerLevel;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Experiencie")
+	float CurrentExperience = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Experiencie")
+	float NeededExperience = 100.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Experiencie")
+	float NeededExperienceIncrementPerLevel = 50.0f;
 
 	
 	
