@@ -38,6 +38,8 @@ void UCharacterStatsComponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
+	CurrentPlayerStatsMap = CharacterBaseStatsData->PlayerStatsBaseMap;
+
 	
 }
 
@@ -204,6 +206,35 @@ float UCharacterStatsComponent::GetFinalStatWithSkill(ECharacterStatType Stat, f
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, ErrorMessage);
 	}
 	return FinalStatValue;
+}
+
+void UCharacterStatsComponent::AddPlayerExperience(const float Amount)
+{
+	CurrentExperience += Amount;
+
+	if(CurrentExperience >= NeededExperience)
+	{
+		LevelUp();
+	}
+}
+
+void UCharacterStatsComponent::LevelUp()
+{
+	const float DifferenceExperience = CurrentExperience - NeededExperience;
+	CurrentExperience = DifferenceExperience;
+	CurrentPlayerLevel++;
+	NeededExperience += NeededExperienceIncrementPerLevel;
+
+	IncrementStatsByLevel();
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Player has leveled up!"));
+}
+
+void UCharacterStatsComponent::IncrementStatsByLevel()
+{
+	for (auto& Pair : CurrentPlayerStatsMap)
+	{
+		Pair.Value.Value += Pair.Value.LevelIncrement;
+	}
 }
 
 
