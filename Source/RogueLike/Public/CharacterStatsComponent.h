@@ -100,7 +100,18 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Experiencie")
 	float NeededExperienceIncrementPerLevel = 50.0f;
+	
+	UFUNCTION(BlueprintCallable, Category = "Economy")
+	void AddGold(int Amount);
+	UFUNCTION(BlueprintCallable, Category = "Economy")
+	void RemoveGold(int Amount);
+	UFUNCTION(BlueprintCallable, Category = "Economy")
+	int GetGold();
+	UFUNCTION(BlueprintCallable, Category = "Economy")
+	bool EnoughGold(int Amount);
 
+private:
+	int CurrentGold = 0;
 	
 	
 };
