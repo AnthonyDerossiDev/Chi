@@ -237,4 +237,24 @@ void UCharacterStatsComponent::IncrementStatsByLevel()
 	}
 }
 
+void UCharacterStatsComponent::AddGold(int Amount)
+{
+	CurrentGold += Amount;
+}
+
+void UCharacterStatsComponent::RemoveGold(int Amount)
+{
+	CurrentGold = FMath::Max(CurrentGold - Amount, 0);
+}
+
+int UCharacterStatsComponent::GetGold()
+{
+	return CurrentGold;
+}
+
+bool UCharacterStatsComponent::EnoughGold(int Amount)
+{
+	return CurrentGold >= Amount;
+}
+
 
