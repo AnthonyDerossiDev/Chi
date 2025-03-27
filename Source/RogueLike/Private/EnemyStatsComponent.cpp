@@ -36,21 +36,6 @@ void UEnemyStatsComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 	// ...
 }
 
-#if WITH_EDITOR
-void UEnemyStatsComponent::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
-{
-	Super::PostEditChangeProperty(PropertyChangedEvent);
-
-	if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UEnemyStatsComponent, EnemyStatsData))
-	{
-		if (EnemyStatsData != nullptr)
-		{
-			CurrentEnemyStatsMap = EnemyStatsData->EnemyStatsBaseMap;
-		}
-	}
-}
-#endif 
-
 float UEnemyStatsComponent::GetCurrentStat(EEnemyStatType Stat)
 {
 	float EnemyCurrentStat = 0.0f;
