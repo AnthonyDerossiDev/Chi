@@ -52,22 +52,6 @@ void UCharacterStatsComponent::TickComponent(float DeltaTime, ELevelTick TickTyp
 	// ...
 }
 
-#if WITH_EDITOR
-void UCharacterStatsComponent::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
-{
-	Super::PostEditChangeProperty(PropertyChangedEvent);
-
-	if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UCharacterStatsComponent, CharacterBaseStatsData))
-	{
-		if (CharacterBaseStatsData != nullptr)
-		{
-			CurrentPlayerStatsMap = CharacterBaseStatsData->PlayerStatsBaseMap;
-			
-		}
-	}
-}
-#endif
-
 void UCharacterStatsComponent::AddStatData(ECharacterStatType Stat, float AdditiveDelta, float MultiplicativeDelta, float DivisorDelta, float MaxStack)
 {
 	if (CurrentPlayerStatsMap.Contains(Stat))
